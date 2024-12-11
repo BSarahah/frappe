@@ -1,8 +1,8 @@
-<div align="center">
-	<img src=".github/framework-logo-new.svg" width="100">
+<div align="center" markdown="1">
+	<img src=".github/framework-logo-new.svg" width="100"/>
 	<h1>Frappe Framework</h1>
-	
-	**Low Code Web Framework For Real World Applications, In Python And JavaScript**
+
+ **Low Code Web Framework For Real World Applications, In Python And JavaScript**
 </div>
 
 <div align="center">
