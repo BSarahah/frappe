@@ -9,6 +9,10 @@ import "./frappe/dom.js";
 import "./frappe/ui/messages.js";
 import "./frappe/ui/keyboard.js";
 import "./frappe/ui/colors.js";
+<<<<<<< HEAD
+=======
+import "./frappe/ui/sidebar.html";
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 import "./frappe/ui/sidebar.js";
 import "./frappe/ui/link_preview.js";
 
@@ -104,3 +108,8 @@ import "./frappe/ui/chart.js";
 import "./frappe/ui/datatable.js";
 import "./frappe/ui/driver.js";
 import "./frappe/scanner";
+<<<<<<< HEAD
+=======
+
+import "./frappe/ui/address_autocomplete/autocomplete_dialog.js";
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

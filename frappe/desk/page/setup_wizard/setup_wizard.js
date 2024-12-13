@@ -397,7 +397,10 @@ frappe.setup.slides_settings = [
 				fieldtype: "Select",
 				reqd: 1,
 			},
+<<<<<<< HEAD
 			{ fieldtype: "Column Break" },
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			{
 				fieldname: "currency",
 				label: __("Currency"),

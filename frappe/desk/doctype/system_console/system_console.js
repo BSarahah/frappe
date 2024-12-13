@@ -41,6 +41,13 @@ frappe.ui.form.on("System Console", {
 				frm.get_field("sql_output").html("");
 			}
 		}
+<<<<<<< HEAD
+=======
+
+		const field = frm.get_field("console");
+		field.df.options = frm.doc.type;
+		field.set_language();
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	},
 
 	render_sql_output: function (frm) {

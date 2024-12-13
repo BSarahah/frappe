@@ -5,10 +5,17 @@ import json
 
 import frappe
 from frappe import _
+<<<<<<< HEAD
 from frappe.config import get_modules_from_all_apps_for_user
 from frappe.model.document import Document
 from frappe.modules.export_file import export_to_files
 from frappe.query_builder import DocType
+=======
+from frappe.model.document import Document
+from frappe.modules.export_file import export_to_files
+from frappe.query_builder import DocType
+from frappe.utils.modules import get_modules_from_all_apps_for_user
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 
 class Dashboard(Document):
@@ -29,8 +36,13 @@ class Dashboard(Document):
 		is_default: DF.Check
 		is_standard: DF.Check
 		module: DF.Link | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def on_update(self):
 		if self.is_default:
 			# make all other dashboards non-default

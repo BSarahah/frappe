@@ -24,7 +24,11 @@
 
 {% block script %}
 	<script>
+<<<<<<< HEAD
 		frappe.boot = {{ boot }};
+=======
+		frappe.boot = {{ boot | json }};
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		frappe._messages = {{ translated_messages }};
 		frappe.web_form_doc = {{ web_form_doc | json }};
 	</script>

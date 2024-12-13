@@ -2,13 +2,22 @@
 # License: MIT. See LICENSE
 
 import frappe
+<<<<<<< HEAD
 from frappe.test_runner import make_test_objects
 from frappe.tests.utils import FrappeTestCase
+=======
+from frappe.tests import IntegrationTestCase
+from frappe.tests.utils import make_test_objects
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.utils import format_date, today
 from frappe.utils.goal import get_monthly_goal_graph_data, get_monthly_results
 
 
+<<<<<<< HEAD
 class TestGoal(FrappeTestCase):
+=======
+class TestGoal(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		make_test_objects("Event", reset=True)
 

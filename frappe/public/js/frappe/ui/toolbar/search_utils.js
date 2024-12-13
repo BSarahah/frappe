@@ -616,6 +616,7 @@ frappe.search.utils = {
 		return { score, marked_string };
 	},
 
+<<<<<<< HEAD
 	bolden_match_part: function (str, subseq) {
 		if (fuzzy_match(subseq, str)[0] === false) {
 			return str;
@@ -650,6 +651,13 @@ frappe.search.utils = {
 		}
 		rendered += str_orig.slice(j);
 		return rendered;
+=======
+	/**
+	 * @deprecated Use frappe.search.utils.fuzzy_search(subseq, str, true).marked_string instead.
+	 */
+	bolden_match_part: function (str, subseq) {
+		return this.fuzzy_search(subseq, str, true).marked_string;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	},
 
 	get_executables(keywords) {

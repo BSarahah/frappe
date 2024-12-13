@@ -82,4 +82,8 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": []
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

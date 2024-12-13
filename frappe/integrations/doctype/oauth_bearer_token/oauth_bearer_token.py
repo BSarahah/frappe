@@ -22,8 +22,13 @@ class OAuthBearerToken(Document):
 		scopes: DF.Text | None
 		status: DF.Literal["Active", "Revoked"]
 		user: DF.Link | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		if not self.expiration_time:
 			self.expiration_time = frappe.utils.datetime.datetime.strptime(

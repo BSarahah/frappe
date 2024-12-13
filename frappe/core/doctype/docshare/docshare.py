@@ -28,6 +28,10 @@ class DocShare(Document):
 		user: DF.Link | None
 		write: DF.Check
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	no_feed_on_delete = True
 
 	def validate(self):

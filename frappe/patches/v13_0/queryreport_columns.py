@@ -7,7 +7,11 @@ import frappe
 
 
 def execute():
+<<<<<<< HEAD
 	"""Convert Query Report json to support other content"""
+=======
+	"""Convert Query Report json to support other content."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	records = frappe.get_all("Report", filters={"json": ["!=", ""]}, fields=["name", "json"])
 	for record in records:
 		jstr = record["json"]

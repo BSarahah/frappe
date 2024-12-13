@@ -24,8 +24,13 @@ class EmailGroup(Document):
 		total_subscribers: DF.Int
 		welcome_email_template: DF.Link | None
 		welcome_url: DF.Data | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def onload(self):
 		singles = [d.name for d in frappe.get_all("DocType", "name", {"issingle": 1})]
 		self.get("__onload").import_types = [

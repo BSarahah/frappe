@@ -52,7 +52,11 @@
 
 .frappe-control[data-fieldtype="Icon"] {
 	input {
+<<<<<<< HEAD
 		padding-left: 40px;
+=======
+		padding-left: 30px;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	}
 	.selected-icon {
 		cursor: pointer;
@@ -73,6 +77,20 @@
 			cursor: default;
 		}
 	}
+<<<<<<< HEAD
+=======
+	.horizontal {
+		.selected-icon {
+			top: 2px;
+			left: calc(38% + 5px);
+		}
+		.like-disabled-input {
+			.selected-icon {
+				left: 8px;
+			}
+		}
+	}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 }
 
 .data-row.row {

@@ -17,4 +17,8 @@ class DataExport(Document):
 		file_type: DF.Literal["Excel", "CSV"]
 		reference_doctype: DF.Link
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

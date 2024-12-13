@@ -31,8 +31,13 @@ class ContactUsSettings(Document):
 		query_options: DF.SmallText | None
 		skype: DF.Data | None
 		state: DF.Data | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def on_update(self):
 		from frappe.website.utils import clear_cache
 

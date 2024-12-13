@@ -15,8 +15,13 @@ from werkzeug.test import TestResponse
 
 import frappe
 from frappe.installer import update_site_config
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase, patch_hooks
 from frappe.utils import cint, get_site_url, get_test_client, get_url
+=======
+from frappe.tests import IntegrationTestCase
+from frappe.utils import cint, get_test_client, get_url
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 try:
 	_site = frappe.local.site
@@ -84,7 +89,11 @@ resource_key = {
 }
 
 
+<<<<<<< HEAD
 class FrappeAPITestCase(FrappeTestCase):
+=======
+class FrappeAPITestCase(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	version = ""  # Empty implies v1
 	TEST_CLIENT = get_test_client()
 
@@ -133,7 +142,11 @@ class FrappeAPITestCase(FrappeTestCase):
 
 class TestResourceAPI(FrappeAPITestCase):
 	DOCTYPE = "ToDo"
+<<<<<<< HEAD
 	GENERATED_DOCUMENTS: typing.ClassVar = []
+=======
+	GENERATED_DOCUMENTS: typing.ClassVar[list] = []
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	@classmethod
 	def setUpClass(cls):
@@ -362,7 +375,11 @@ class TestWSGIApp(FrappeAPITestCase):
 	def test_request_hooks(self):
 		self.addCleanup(lambda: _test_REQ_HOOK.clear())
 
+<<<<<<< HEAD
 		with patch_hooks(
+=======
+		with self.patch_hooks(
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			{
 				"before_request": ["frappe.tests.test_api.before_request"],
 				"after_request": ["frappe.tests.test_api.after_request"],

@@ -20,6 +20,10 @@ class Country(Document):
 		time_format: DF.Data | None
 		time_zones: DF.Text | None
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	# NOTE: During installation country docs are bulk inserted.
 	pass
 

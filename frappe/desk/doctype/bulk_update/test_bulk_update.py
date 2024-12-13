@@ -6,10 +6,26 @@ import time
 import frappe
 from frappe.core.doctype.doctype.test_doctype import new_doctype
 from frappe.desk.doctype.bulk_update.bulk_update import submit_cancel_or_update_docs
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase, timeout
 
 
 class TestBulkUpdate(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase, UnitTestCase, timeout
+
+
+class UnitTestBulkUpdate(UnitTestCase):
+	"""
+	Unit tests for BulkUpdate.
+	Use this class for testing individual functions and methods.
+	"""
+
+	pass
+
+
+class TestBulkUpdate(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	@classmethod
 	def setUpClass(cls) -> None:
 		super().setUpClass()

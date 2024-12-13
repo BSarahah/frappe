@@ -21,8 +21,13 @@ class PortalSettings(Document):
 		default_role: DF.Link | None
 		hide_standard_menu: DF.Check
 		menu: DF.Table[PortalMenuItem]
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def add_item(self, item):
 		"""insert new portal menu item if route is not set, or role is different"""
 		exists = [d for d in self.get("menu", []) if d.get("route") == item.get("route")]

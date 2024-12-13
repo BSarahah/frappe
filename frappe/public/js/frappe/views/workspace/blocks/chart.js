@@ -33,7 +33,11 @@ export default class Chart extends Block {
 
 		if (this.data && this.data.chart_name) {
 			let has_data = this.make("chart", this.data.chart_name);
+<<<<<<< HEAD
 			if (!has_data) return;
+=======
+			if (!has_data) return this.wrapper;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		}
 
 		if (!this.readOnly) {

@@ -19,8 +19,13 @@ class BlogCategory(WebsiteGenerator):
 		published: DF.Check
 		route: DF.Data | None
 		title: DF.Data
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def autoname(self):
 		# to override autoname of WebsiteGenerator
 		self.name = self.scrub(self.title)

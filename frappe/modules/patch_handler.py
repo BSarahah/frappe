@@ -1,6 +1,10 @@
 # Copyright (c) 2021, Frappe Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
+<<<<<<< HEAD
 """ Patch Handler.
+=======
+"""Patch Handler.
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 This file manages execution of manaully written patches. Patches are script
 that apply changes in database schema or data to accomodate for changes in the

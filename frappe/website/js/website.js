@@ -425,7 +425,13 @@ frappe.setup_search = function (target, search_scope) {
 	}
 
 	let $search_input = $(`<div class="dropdown" id="dropdownMenuSearch">
+<<<<<<< HEAD
 			<input type="search" class="form-control" placeholder="Search the docs (Press / to focus)" />
+=======
+			<input type="search" class="form-control" placeholder="${__(
+				"Search the docs (Press / to focus)"
+			)}" />
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			<div class="overflow-hidden shadow dropdown-menu w-100" aria-labelledby="dropdownMenuSearch">
 			</div>
 			<div class="search-icon">

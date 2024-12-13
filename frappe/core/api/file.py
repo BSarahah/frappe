@@ -15,8 +15,12 @@ def unzip_file(name: str):
 
 @frappe.whitelist()
 def get_attached_images(doctype: str, names: list[str] | str) -> frappe._dict:
+<<<<<<< HEAD
 	"""get list of image urls attached in form
 	returns {name: ['image.jpg', 'image.png']}"""
+=======
+	"""Return list of image urls attached in form `{name: ['image.jpg', 'image.png']}`."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	if isinstance(names, str):
 		names = json.loads(names)
@@ -77,7 +81,11 @@ def get_files_by_search_text(text: str) -> list[dict]:
 			"file_url": text,
 			"name": ("like", text),
 		},
+<<<<<<< HEAD
 		order_by="modified desc",
+=======
+		order_by="creation desc",
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		limit=20,
 	)
 

@@ -24,15 +24,26 @@ class LetterHead(Document):
 		footer_image: DF.AttachImage | None
 		footer_image_height: DF.Float
 		footer_image_width: DF.Float
+<<<<<<< HEAD
 		footer_source: DF.Literal["Image", "HTML"]
+=======
+		footer_script: DF.Code | None
+		footer_source: DF.Literal["Image", "HTML"]
+		header_script: DF.Code | None
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		image: DF.AttachImage | None
 		image_height: DF.Float
 		image_width: DF.Float
 		is_default: DF.Check
 		letter_head_name: DF.Data
 		source: DF.Literal["Image", "HTML"]
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def before_insert(self):
 		# for better UX, let user set from attachment
 		self.source = "Image"

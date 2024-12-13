@@ -13,10 +13,17 @@ export default class ListFilter {
 	make() {
 		// init dom
 		this.wrapper.html(`
+<<<<<<< HEAD
 			<li class="input-area"></li>
 			<li class="sidebar-action">
 				<a class="saved-filters-preview">${__("Show Saved")}</a>
 			</li>
+=======
+			<div class="input-area"></div>
+			<div class="sidebar-action">
+				<a class="saved-filters-preview">${__("Show Saved")}</a>
+			</div>
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			<div class="saved-filters"></div>
 		`);
 
@@ -56,9 +63,22 @@ export default class ListFilter {
 
 	refresh() {
 		this.get_list_filters().then(() => {
+<<<<<<< HEAD
 			this.filters.length
 				? this.$saved_filters_preview.show()
 				: this.$saved_filters_preview.hide();
+=======
+			if (this.filters.length) {
+				// expand collapsible sections
+				this.wrapper.hasClass("hide") && this.section_title.trigger("click");
+				this.$saved_filters_preview.show();
+			} else {
+				// hide collapsible sections
+				!this.wrapper.hasClass("hide") && this.section_title.trigger("click");
+				this.$saved_filters_preview.hide();
+			}
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			const html = this.filters.map((filter) => this.filter_template(filter));
 			this.wrapper.find(".filter-pill").remove();
 			this.$saved_filters.append(html);

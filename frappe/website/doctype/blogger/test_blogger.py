@@ -2,5 +2,8 @@
 # License: MIT. See LICENSE
 
 import frappe
+<<<<<<< HEAD
 
 test_records = frappe.get_test_records("Blogger")
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

@@ -3,15 +3,35 @@
 import json
 
 import frappe
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
+=======
+from frappe.tests import IntegrationTestCase, UnitTestCase
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.utils import set_request
 from frappe.website.doctype.web_form.web_form import accept
 from frappe.website.serve import get_response_content
 
+<<<<<<< HEAD
 test_dependencies = ["Web Form"]
 
 
 class TestWebForm(FrappeTestCase):
+=======
+EXTRA_TEST_RECORD_DEPENDENCIES = ["Web Form"]
+
+
+class UnitTestWebForm(UnitTestCase):
+	"""
+	Unit tests for WebForm.
+	Use this class for testing individual functions and methods.
+	"""
+
+	pass
+
+
+class TestWebForm(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		frappe.conf.disable_website_cache = True
 

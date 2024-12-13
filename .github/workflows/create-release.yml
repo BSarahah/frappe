@@ -2,7 +2,11 @@ name: Generate Semantic Release
 on:
   push:
     branches:
+<<<<<<< HEAD
       - version-15
+=======
+      - version-14-beta
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 permissions:
   contents: read
 
@@ -17,7 +21,11 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Setup Node.js
+<<<<<<< HEAD
         uses: actions/setup-node@v3
+=======
+        uses: actions/setup-node@v4
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
         with:
           node-version: 20
       - name: Setup dependencies

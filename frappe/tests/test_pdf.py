@@ -7,10 +7,17 @@ from pypdf import PdfReader
 import frappe
 import frappe.utils.pdf as pdfgen
 from frappe.core.doctype.file.test_file import make_test_image_file
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestPdf(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestPdf(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	@property
 	def html(self):
 		return """<style>

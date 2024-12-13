@@ -22,4 +22,8 @@ class NotificationRecipient(Document):
 		receiver_by_document_field: DF.Literal[None]
 		receiver_by_role: DF.Link | None
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

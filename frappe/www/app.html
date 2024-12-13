@@ -21,7 +21,11 @@
 			href="{{ favicon or "/assets/frappe/images/frappe-favicon.svg" }}" type="image/x-icon">
 		<link rel="icon"
 			href="{{ favicon or "/assets/frappe/images/frappe-favicon.svg" }}" type="image/x-icon">
+<<<<<<< HEAD
 		{% for include in include_css -%}
+=======
+		{% for include in app_include_css -%}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		{{ include_style(include) }}
 		{%- endfor -%}
 
@@ -51,11 +55,16 @@
 
 			if (!window.frappe) window.frappe = {};
 
+<<<<<<< HEAD
 			frappe.boot = JSON.parse({{ boot }});
+=======
+			frappe.boot = {{ boot | json }};
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			frappe._messages = frappe.boot["__messages"];
 			frappe.csrf_token = "{{ csrf_token }}";
 
 
+<<<<<<< HEAD
 			{%- for path in include_icons -%}
 			fetch(`/assets/{{ path }}?v=${window._version_number}`, { credentials: "same-origin" })
 				.then((r) => r.text())
@@ -67,6 +76,15 @@
 		</script>
 
 	{% for include in include_js %}
+=======
+		</script>
+
+		{%- for path in app_include_icons -%}
+		{{ include_icons(path) }}
+		{%- endfor -%}
+
+	{% for include in app_include_js %}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	{{ include_script(include) }}
 	{% endfor %}
 

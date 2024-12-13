@@ -51,6 +51,10 @@ class CustomizeFormField(Document):
 			"Icon",
 			"Image",
 			"Int",
+<<<<<<< HEAD
+=======
+			"JSON",
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			"Link",
 			"Long Text",
 			"Markdown Editor",

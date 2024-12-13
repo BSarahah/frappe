@@ -1,9 +1,16 @@
 import frappe
 from frappe import format
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestFormatter(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestFormatter(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def test_currency_formatting(self):
 		df = frappe._dict({"fieldname": "amount", "fieldtype": "Currency", "options": "currency"})
 

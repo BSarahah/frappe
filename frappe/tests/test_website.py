@@ -2,14 +2,22 @@ from unittest.mock import patch
 
 import frappe
 from frappe import get_hooks
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
+=======
+from frappe.tests import IntegrationTestCase
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.utils import set_request
 from frappe.website.page_renderers.static_page import StaticPage
 from frappe.website.serve import get_response, get_response_content
 from frappe.website.utils import build_response, clear_website_cache, get_home_page
 
 
+<<<<<<< HEAD
 class TestWebsite(FrappeTestCase):
+=======
+class TestWebsite(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		frappe.set_user("Guest")
 		self._clearRequest()
@@ -27,6 +35,7 @@ class TestWebsite(FrappeTestCase):
 		frappe.set_user("Administrator")
 		# test home page via role
 		user = frappe.get_doc(
+<<<<<<< HEAD
 			dict(doctype="User", email="test-user-for-home-page@example.com", first_name="test")
 		).insert(ignore_if_duplicate=True)
 		user.reload()
@@ -38,6 +47,15 @@ class TestWebsite(FrappeTestCase):
 				desk_access=0,
 			)
 		).insert(ignore_if_duplicate=True)
+=======
+			doctype="User", email="test-user-for-home-page@example.com", first_name="test"
+		).insert(ignore_if_duplicate=True)
+		user.reload()
+
+		role = frappe.get_doc(doctype="Role", role_name="home-page-test", desk_access=0).insert(
+			ignore_if_duplicate=True
+		)
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 		user.add_roles(role.name)
 		user.save()

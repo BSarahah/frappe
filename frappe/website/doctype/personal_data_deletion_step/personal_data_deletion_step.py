@@ -23,4 +23,8 @@ class PersonalDataDeletionStep(Document):
 		partial: DF.Check
 		status: DF.Literal["Pending", "Deleted"]
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

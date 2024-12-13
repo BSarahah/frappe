@@ -29,8 +29,13 @@ class NotificationLog(Document):
 		read: DF.Check
 		subject: DF.Text | None
 		type: DF.Literal["", "Mention", "Energy Point", "Assignment", "Share", "Alert"]
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def after_insert(self):
 		frappe.publish_realtime("notification", after_commit=True, user=self.for_user)
 		set_notifications_as_unseen(self.for_user)
@@ -46,7 +51,11 @@ class NotificationLog(Document):
 		from frappe.query_builder.functions import Now
 
 		table = frappe.qb.DocType("Notification Log")
+<<<<<<< HEAD
 		frappe.db.delete(table, filters=(table.modified < (Now() - Interval(days=days))))
+=======
+		frappe.db.delete(table, filters=(table.creation < (Now() - Interval(days=days))))
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 
 def get_permission_query_conditions(for_user):
@@ -93,6 +102,10 @@ def enqueue_create_notification(users: list[str] | str, doc: dict):
 		doc=doc,
 		users=users,
 		now=frappe.flags.in_test,
+<<<<<<< HEAD
+=======
+		enqueue_after_commit=not frappe.flags.in_test,
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	)
 
 
@@ -165,7 +178,11 @@ def get_email_header(doc, language: str | None = None):
 @frappe.whitelist()
 def get_notification_logs(limit=20):
 	notification_logs = frappe.db.get_list(
+<<<<<<< HEAD
 		"Notification Log", fields=["*"], limit=limit, order_by="modified desc"
+=======
+		"Notification Log", fields=["*"], limit=limit, order_by="creation desc"
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	)
 
 	users = [log.from_user for log in notification_logs]

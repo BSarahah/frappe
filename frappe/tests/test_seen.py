@@ -3,10 +3,17 @@
 import json
 
 import frappe
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestSeen(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestSeen(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def tearDown(self):
 		frappe.set_user("Administrator")
 

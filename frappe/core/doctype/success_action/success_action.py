@@ -19,4 +19,8 @@ class SuccessAction(Document):
 		next_actions: DF.Data | None
 		ref_doctype: DF.Link
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

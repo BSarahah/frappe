@@ -2731,6 +2731,7 @@
   ],
   "isd": "+216"
  },
+<<<<<<< HEAD
  "Turkey": {
   "code": "tr",
   "currency": "TRY",
@@ -2743,6 +2744,8 @@
   ],
   "isd": "+90"
  },
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
  "Turkmenistan": {
   "code": "tm",
   "currency": "TMM",
@@ -2775,6 +2778,21 @@
   ],
   "isd": "+688"
  },
+<<<<<<< HEAD
+=======
+  "T\u00fcrkiye": {
+  "code": "tr",
+  "currency": "TRY",
+  "currency_fraction": "Kuru\u015f",
+  "currency_fraction_units": 100,
+  "currency_symbol": "\u20ba",
+  "number_format": "#.###,##",
+  "timezones": [
+   "Europe/Istanbul"
+  ],
+  "isd": "+90"
+ },
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
  "Uganda": {
   "code": "ug",
   "currency": "UGX",

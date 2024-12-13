@@ -229,7 +229,11 @@ frappe.ui.GroupBy = class {
 		this.page.wrapper.find(".sort-selector").before(
 			$(`<div class="group-by-selector">
 				<button class="btn btn-default btn-sm group-by-button ellipsis">
+<<<<<<< HEAD
 					<span class="group-by-icon">
+=======
+					<span class="group-by-icon button-icon">
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 						${frappe.utils.icon("es-line-folder-alt")}
 					</span>
 					<span class="button-label hidden-xs">

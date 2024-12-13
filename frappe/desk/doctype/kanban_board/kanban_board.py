@@ -26,8 +26,13 @@ class KanbanBoard(Document):
 		private: DF.Check
 		reference_doctype: DF.Link
 		show_labels: DF.Check
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		self.validate_column_name()
 

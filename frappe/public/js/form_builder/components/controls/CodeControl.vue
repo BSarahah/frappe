@@ -43,7 +43,11 @@ watch(
 	() => content.value,
 	(value) => {
 		update_control.value = false;
+<<<<<<< HEAD
 		code_control.value?.set_value(value);
+=======
+		code_control.value?.set_value(value ?? "");
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	}
 );
 

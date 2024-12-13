@@ -6,7 +6,10 @@ from http import cookies
 from urllib.parse import unquote, urljoin, urlparse
 
 import jwt
+<<<<<<< HEAD
 import pytz
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from oauthlib.openid import RequestValidator
 
 import frappe
@@ -245,10 +248,14 @@ class OAuthWebRequestValidator(RequestValidator):
 		client_scopes = frappe.db.get_value("OAuth Client", otoken.client, "scopes").split(
 			get_url_delimiter()
 		)
+<<<<<<< HEAD
 		are_scopes_valid = True
 		for scp in scopes:
 			are_scopes_valid = are_scopes_valid and True if scp in client_scopes else False
 
+=======
+		are_scopes_valid = all(scope in client_scopes for scope in scopes)
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		return is_token_valid and are_scopes_valid
 
 	# Token refresh request

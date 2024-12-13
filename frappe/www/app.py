@@ -22,10 +22,17 @@ def get_context(context):
 		frappe.response["status_code"] = 403
 		frappe.msgprint(_("Log in to access this page."))
 		frappe.redirect(f"/login?{urlencode({'redirect-to': frappe.request.path})}")
+<<<<<<< HEAD
 	elif frappe.db.get_value("User", frappe.session.user, "user_type", order_by=None) == "Website User":
 		frappe.throw(_("You are not permitted to access this page."), frappe.PermissionError)
 
 	hooks = frappe.get_hooks()
+=======
+
+	elif frappe.db.get_value("User", frappe.session.user, "user_type", order_by=None) == "Website User":
+		frappe.throw(_("You are not permitted to access this page."), frappe.PermissionError)
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	try:
 		boot = frappe.sessions.get()
 	except Exception as e:
@@ -43,6 +50,7 @@ def get_context(context):
 
 	# TODO: Find better fix
 	boot_json = CLOSING_SCRIPT_TAG_PATTERN.sub("", boot_json)
+<<<<<<< HEAD
 	boot_json = json.dumps(boot_json)
 
 	include_js = hooks.get("app_include_js", []) + frappe.conf.get("app_include_js", [])
@@ -52,11 +60,22 @@ def get_context(context):
 
 	if frappe.get_system_settings("enable_telemetry") and os.getenv("FRAPPE_SENTRY_DSN"):
 		include_js.append("sentry.bundle.js")
+=======
+
+	hooks = frappe.get_hooks()
+	app_include_js = hooks.get("app_include_js", []) + frappe.conf.get("app_include_js", [])
+	app_include_css = hooks.get("app_include_css", []) + frappe.conf.get("app_include_css", [])
+	app_include_icons = hooks.get("app_include_icons", [])
+
+	if frappe.get_system_settings("enable_telemetry") and os.getenv("FRAPPE_SENTRY_DSN"):
+		app_include_js.append("sentry.bundle.js")
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	context.update(
 		{
 			"no_cache": 1,
 			"build_version": frappe.utils.get_build_version(),
+<<<<<<< HEAD
 			"include_js": include_js,
 			"include_css": include_css,
 			"include_icons": include_icons,
@@ -64,6 +83,15 @@ def get_context(context):
 			"lang": frappe.local.lang,
 			"sounds": hooks["sounds"],
 			"boot": boot if context.get("for_mobile") else boot_json,
+=======
+			"app_include_js": app_include_js,
+			"app_include_css": app_include_css,
+			"app_include_icons": app_include_icons,
+			"layout_direction": "rtl" if is_rtl() else "ltr",
+			"lang": frappe.local.lang,
+			"sounds": hooks["sounds"],
+			"boot": boot if context.get("for_mobile") else json.loads(boot_json),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			"desk_theme": boot.get("desk_theme") or "Light",
 			"csrf_token": csrf_token,
 			"google_analytics_id": frappe.conf.get("google_analytics_id"),

@@ -19,13 +19,23 @@ class PrintStyle(Document):
 		preview: DF.AttachImage | None
 		print_style_name: DF.Data
 		standard: DF.Check
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		if (
 			self.standard == 1
 			and not frappe.local.conf.get("developer_mode")
+<<<<<<< HEAD
 			and not (frappe.flags.in_import or frappe.flags.in_test)
+=======
+			and not frappe.flags.in_import
+			and not frappe.flags.in_test
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		):
 			frappe.throw(frappe._("Standard Print Style cannot be changed. Please duplicate to edit."))
 

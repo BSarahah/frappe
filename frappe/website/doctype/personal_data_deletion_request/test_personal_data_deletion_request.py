@@ -3,7 +3,11 @@
 from datetime import datetime, timedelta
 
 import frappe
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
+=======
+from frappe.tests import IntegrationTestCase, UnitTestCase
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request import (
 	process_data_deletion_request,
 	remove_unverified_record,
@@ -13,7 +17,20 @@ from frappe.website.doctype.personal_data_download_request.test_personal_data_do
 )
 
 
+<<<<<<< HEAD
 class TestPersonalDataDeletionRequest(FrappeTestCase):
+=======
+class UnitTestPersonalDataDeletionRequest(UnitTestCase):
+	"""
+	Unit tests for PersonalDataDeletionRequest.
+	Use this class for testing individual functions and methods.
+	"""
+
+	pass
+
+
+class TestPersonalDataDeletionRequest(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		create_user_if_not_exists(email="test_delete@example.com")
 		self.delete_request = frappe.get_doc(

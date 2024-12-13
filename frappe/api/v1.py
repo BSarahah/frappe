@@ -72,8 +72,12 @@ def read_doc(doctype: str, name: str):
 		return execute_doc_method(doctype, name)
 
 	doc = frappe.get_doc(doctype, name)
+<<<<<<< HEAD
 	if not doc.has_permission("read"):
 		raise frappe.PermissionError
+=======
+	doc.check_permission("read")
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	doc.apply_fieldlevel_read_permissions()
 	return doc
 
@@ -84,6 +88,7 @@ def execute_doc_method(doctype: str, name: str, method: str | None = None):
 	doc.is_whitelisted(method)
 
 	if frappe.request.method == "GET":
+<<<<<<< HEAD
 		if not doc.has_permission("read"):
 			frappe.throw(_("Not permitted"), frappe.PermissionError)
 		return doc.run_method(method, **frappe.form_dict)
@@ -92,6 +97,13 @@ def execute_doc_method(doctype: str, name: str, method: str | None = None):
 		if not doc.has_permission("write"):
 			frappe.throw(_("Not permitted"), frappe.PermissionError)
 
+=======
+		doc.check_permission("read")
+		return doc.run_method(method, **frappe.form_dict)
+
+	elif frappe.request.method == "POST":
+		doc.check_permission("write")
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		return doc.run_method(method, **frappe.form_dict)
 
 

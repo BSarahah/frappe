@@ -23,6 +23,10 @@ class SMSSettings(Document):
 		sms_gateway_url: DF.SmallText
 		use_post: DF.Check
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass
 
 
@@ -46,7 +50,11 @@ def validate_receiver_nos(receiver_list):
 
 @frappe.whitelist()
 def get_contact_number(contact_name, ref_doctype, ref_name):
+<<<<<<< HEAD
 	"returns mobile number of the contact"
+=======
+	"Return mobile number of the given contact."
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	number = frappe.db.sql(
 		"""select mobile_no, phone from tabContact
 		where name=%s
@@ -57,7 +65,11 @@ def get_contact_number(contact_name, ref_doctype, ref_name):
 		(contact_name, ref_doctype, ref_name),
 	)
 
+<<<<<<< HEAD
 	return number and (number[0][0] or number[0][1]) or ""
+=======
+	return (number and (number[0][0] or number[0][1])) or ""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 
 @frappe.whitelist()

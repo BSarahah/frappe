@@ -97,7 +97,11 @@ frappe.ui.form.Layout = class Layout {
 		return fields;
 	}
 
+<<<<<<< HEAD
 	show_message(html, color) {
+=======
+	show_message(html, color, permanent = false) {
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		if (this.message_color) {
 			// remove previous color
 			this.message.removeClass(this.message_color);
@@ -112,8 +116,15 @@ frappe.ui.form.Layout = class Layout {
 			}
 			this.message.removeClass("hidden").addClass(this.message_color);
 			$(html).appendTo(this.message);
+<<<<<<< HEAD
 			close_message.appendTo(this.message);
 			close_message.on("click", () => this.message.empty().addClass("hidden"));
+=======
+			if (!permanent) {
+				close_message.appendTo(this.message);
+				close_message.on("click", () => this.message.empty().addClass("hidden"));
+			}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		} else {
 			this.message.empty().addClass("hidden");
 		}
@@ -413,6 +424,17 @@ frappe.ui.form.Layout = class Layout {
 	}
 
 	set_tab_as_active() {
+<<<<<<< HEAD
+=======
+		// Set active tab based on hash
+		const tab_from_hash = window.location.hash.replace("#", "");
+		const tab = this.tabs.find((tab) => tab.df.fieldname === tab_from_hash);
+		if (tab) {
+			tab.set_active();
+			return;
+		}
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		let frm_active_tab = this.frm?.get_active_tab?.();
 		if (frm_active_tab) {
 			frm_active_tab.set_active();
@@ -493,7 +515,11 @@ frappe.ui.form.Layout = class Layout {
 		let tabs_content = this.tabs_content[0];
 		if (!tabs_list.length) return;
 
+<<<<<<< HEAD
 		$(window).scroll(
+=======
+		$(".main-section").scroll(
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			frappe.utils.throttle(() => {
 				let current_scroll = document.documentElement.scrollTop;
 				if (current_scroll > 0 && last_scroll <= current_scroll) {

@@ -28,8 +28,13 @@ class Package(Document):
 		]
 		package_name: DF.Data
 		readme: DF.MarkdownEditor | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		if not self.package_name:
 			self.package_name = self.name.lower().replace(" ", "-")

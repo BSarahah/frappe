@@ -27,13 +27,22 @@ export default class Section {
 
 	make() {
 		let make_card = this.card_layout;
+<<<<<<< HEAD
 		this.wrapper = $(`<div class="row
 				${this.df.is_dashboard_section ? "form-dashboard-section" : "form-section"}
+=======
+		this.wrapper = $(`<div class=
+				"${this.df.is_dashboard_section ? "form-dashboard-section" : "form-section"}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				${make_card ? "card-section" : ""}" data-fieldname="${this.df.fieldname}">
 			`).appendTo(this.parent);
 
 		if (this.df) {
+<<<<<<< HEAD
 			if (this.df.label) {
+=======
+			if (this.df.label && !this.df.hide_label) {
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				this.make_head();
 			}
 			if (this.df.description) {

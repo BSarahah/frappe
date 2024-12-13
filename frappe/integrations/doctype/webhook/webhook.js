@@ -85,6 +85,32 @@ frappe.ui.form.on("Webhook", {
 			"background_jobs_queue",
 			"frappe.integrations.doctype.webhook.webhook.get_all_queues"
 		);
+<<<<<<< HEAD
+=======
+
+		if (frm.doc.webhook_doctype) {
+			frm.add_custom_button(__("Preview"), () => {
+				const args = {
+					doc: frm.doc,
+					doctype: frm.doc.webhook_doctype,
+					preview_fields: [
+						{
+							label: __("Meets Condition?"),
+							fieldtype: "Data",
+							method: "preview_meets_condition",
+						},
+						{
+							label: __("Request Body"),
+							fieldtype: "Code",
+							method: "preview_request_body",
+						},
+					],
+				};
+				let dialog = new frappe.views.RenderPreviewer(args);
+				return dialog;
+			});
+		}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	},
 
 	request_structure: (frm) => {
@@ -98,6 +124,7 @@ frappe.ui.form.on("Webhook", {
 	enable_security: (frm) => {
 		frm.toggle_reqd("webhook_secret", frm.doc.enable_security);
 	},
+<<<<<<< HEAD
 
 	preview_document: (frm) => {
 		frappe.call({
@@ -109,6 +136,8 @@ frappe.ui.form.on("Webhook", {
 			},
 		});
 	},
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 });
 
 frappe.ui.form.on("Webhook Data", {

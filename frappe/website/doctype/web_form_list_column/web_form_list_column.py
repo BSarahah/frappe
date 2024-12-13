@@ -22,4 +22,8 @@ class WebFormListColumn(Document):
 		parentfield: DF.Data
 		parenttype: DF.Data
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

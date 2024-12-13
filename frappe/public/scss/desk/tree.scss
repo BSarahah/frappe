@@ -1,5 +1,18 @@
+<<<<<<< HEAD
 .tree {
 	padding: var(--padding-sm);
+=======
+.treeview {
+	.layout-main-section {
+		max-width: var(--page-max-width);
+		margin: auto;
+	}
+}
+
+.tree {
+	padding: var(--padding-sm);
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	.btn-group {
 		.btn {
 			box-shadow: none;

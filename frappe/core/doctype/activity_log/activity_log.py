@@ -33,8 +33,13 @@ class ActivityLog(Document):
 		timeline_doctype: DF.Link | None
 		timeline_name: DF.DynamicLink | None
 		user: DF.Link | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def before_insert(self):
 		self.full_name = get_fullname(self.user)
 		self.date = now()
@@ -60,7 +65,11 @@ class ActivityLog(Document):
 		if not days:
 			days = 90
 		doctype = DocType("Activity Log")
+<<<<<<< HEAD
 		frappe.db.delete(doctype, filters=(doctype.modified < (Now() - Interval(days=days))))
+=======
+		frappe.db.delete(doctype, filters=(doctype.creation < (Now() - Interval(days=days))))
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 
 def on_doctype_update():

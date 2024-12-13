@@ -94,7 +94,11 @@ frappe.ui.FieldSelect = class FieldSelect {
 		});
 
 		// add parenttype column
+<<<<<<< HEAD
 		var doctype_obj = locals["DocType"][me.doctype];
+=======
+		var doctype_obj = frappe.get_meta(me.doctype);
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		if (doctype_obj && cint(doctype_obj.istable)) {
 			std_filters = std_filters.concat([
 				{

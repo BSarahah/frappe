@@ -129,9 +129,15 @@ export default class OnboardingWidget extends Widget {
 					.on("click", toggle_video);
 			} else {
 				$(
+<<<<<<< HEAD
 					`<button class="btn btn-default btn-sm">${__(
 						step.action_label || step.action
 					)}</button>`
+=======
+					`<button class="btn btn-default btn-sm">${
+						__(step.action_label) || __(step.action)
+					}</button>`
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				)
 					.appendTo(this.step_footer)
 					.on("click", () => actions[step.action](step));
@@ -139,8 +145,13 @@ export default class OnboardingWidget extends Widget {
 		};
 
 		const set_description = () => {
+<<<<<<< HEAD
 			let content = step.description
 				? frappe.markdown(step.description)
+=======
+			let content = __(step.description)
+				? frappe.markdown(__(step.description))
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				: `<h1>${__(step.title)}</h1>`;
 
 			if (step.action === "Create Entry") {
@@ -168,9 +179,15 @@ export default class OnboardingWidget extends Widget {
 			});
 
 			$(
+<<<<<<< HEAD
 				`<button class="btn btn-primary btn-sm">${__(
 					step.action_label || step.action
 				)}</button>`
+=======
+				`<button class="btn btn-primary btn-sm">${
+					__(step.action_label) || __(step.action)
+				}</button>`
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			)
 				.appendTo(this.step_footer)
 				.on("click", () => {
@@ -178,11 +195,14 @@ export default class OnboardingWidget extends Widget {
 					actions[step.action](step);
 				});
 
+<<<<<<< HEAD
 			// Fire only once, on hashchange
 			$(window).one("hashchange", () => {
 				plyr.pause();
 			});
 
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			$(`<button class="btn btn-secondary ml-2 btn-sm">${__("Back")}</button>`)
 				.appendTo(this.step_footer)
 				.on("click", toggle_content);

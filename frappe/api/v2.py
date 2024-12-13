@@ -7,6 +7,10 @@ Note:
 	- None of the functions present here should be called from python code, their location and
 	  internal implementation can change without treating it as "breaking change".
 """
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 import json
 from typing import Any
 

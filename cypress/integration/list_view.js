@@ -13,7 +13,11 @@ context("List View", () => {
 	it("Keep checkbox checked after Refresh", { scrollBehavior: false }, () => {
 		cy.go_to_list("ToDo");
 		cy.clear_filters();
+<<<<<<< HEAD
 		cy.get(".list-header-subject > .list-subject > .list-check-all").click();
+=======
+		cy.get(".list-header-subject .list-subject .list-check-all").click();
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		cy.get("button[data-original-title='Reload List']").click();
 		cy.get(".list-row-container .list-row-checkbox:checked").should("be.visible");
 	});
@@ -31,7 +35,11 @@ context("List View", () => {
 		];
 		cy.go_to_list("ToDo");
 		cy.clear_filters();
+<<<<<<< HEAD
 		cy.get(".list-header-subject > .list-subject > .list-check-all").click();
+=======
+		cy.get(".list-header-subject .list-subject .list-check-all").click();
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		cy.findByRole("button", { name: "Actions" }).click();
 		cy.get(".dropdown-menu li:visible .dropdown-item")
 			.should("have.length", 8)

@@ -201,9 +201,13 @@ frappe.msgprint = function (msg, title, is_minimizable) {
 			data.primary_action.action = () => {
 				frappe.call({
 					method: data.primary_action.server_action,
+<<<<<<< HEAD
 					args: {
 						args: data.primary_action.args,
 					},
+=======
+					args: data.primary_action.args,
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 					callback() {
 						if (data.primary_action.hide_on_success) {
 							frappe.hide_msgprint();
@@ -230,7 +234,11 @@ frappe.msgprint = function (msg, title, is_minimizable) {
 		}
 
 		frappe.msg_dialog.set_primary_action(
+<<<<<<< HEAD
 			__(data.primary_action.label || data.primary_action_label || "Done"),
+=======
+			__(data.primary_action.label) || __(data.primary_action_label) || __("Done"),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			data.primary_action.action
 		);
 	} else {
@@ -242,7 +250,13 @@ frappe.msgprint = function (msg, title, is_minimizable) {
 
 	if (data.secondary_action) {
 		frappe.msg_dialog.set_secondary_action(data.secondary_action.action);
+<<<<<<< HEAD
 		frappe.msg_dialog.set_secondary_action_label(__(data.secondary_action.label || "Close"));
+=======
+		frappe.msg_dialog.set_secondary_action_label(
+			__(data.secondary_action.label) || __("Close")
+		);
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	}
 
 	if (data.message == null) {

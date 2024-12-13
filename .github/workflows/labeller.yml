@@ -5,8 +5,20 @@ on:
 
 jobs:
   triage:
+<<<<<<< HEAD
     runs-on: ubuntu-latest
     steps:
     - uses: actions/labeler@v4
+=======
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone
+      uses: actions/checkout@v4
+
+    - uses: actions/labeler@v5
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"

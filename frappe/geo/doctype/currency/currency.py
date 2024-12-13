@@ -36,8 +36,13 @@ class Currency(Document):
 		smallest_currency_fraction_value: DF.Currency
 		symbol: DF.Data | None
 		symbol_on_right: DF.Check
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	# NOTE: During installation country docs are bulk inserted.
 	def validate(self):
 		frappe.clear_cache()

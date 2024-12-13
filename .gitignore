@@ -70,6 +70,10 @@ coverage.xml
 
 # Translations
 *.mo
+<<<<<<< HEAD
+=======
+*.pot
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 # Django stuff:
 *.log
@@ -167,6 +171,10 @@ typings/
 
 # Optional npm cache directory
 .npm
+<<<<<<< HEAD
+=======
+.yarn
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 # Optional eslint cache
 .eslintcache
@@ -192,6 +200,13 @@ cypress/videos
 
 # JetBrains IDEs
 .idea/
+<<<<<<< HEAD
+=======
+# Helix Editor
+.helix/
+# Aider AI Chat
+.aider*
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 # frappecloud billing
 billing/node_modules

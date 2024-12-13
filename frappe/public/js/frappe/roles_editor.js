@@ -40,6 +40,10 @@ frappe.RoleEditor = class {
 				role && this.show_permissions(role);
 				e.preventDefault();
 			});
+<<<<<<< HEAD
+=======
+			this.set_enable_disable();
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		};
 	}
 	set_enable_disable() {

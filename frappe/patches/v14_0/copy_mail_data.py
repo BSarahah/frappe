@@ -9,7 +9,11 @@ def execute():
 
 		imap_list = [folder.folder_name for folder in doc.imap_folder]
 		# and append the old data to the child table
+<<<<<<< HEAD
 		if doc.uidvalidity or doc.uidnext and "INBOX" not in imap_list:
+=======
+		if doc.uidvalidity or (doc.uidnext and "INBOX" not in imap_list):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			doc.append(
 				"imap_folder",
 				{

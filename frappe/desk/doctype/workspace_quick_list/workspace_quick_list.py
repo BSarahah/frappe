@@ -21,4 +21,8 @@ class WorkspaceQuickList(Document):
 		parenttype: DF.Data
 		quick_list_filter: DF.Code | None
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

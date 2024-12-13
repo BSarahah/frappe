@@ -12,7 +12,11 @@
 			active ? $('.like-icon').addClass('liked') : $('.like-icon').removeClass('liked');
 		}
 
+<<<<<<< HEAD
 		$('.like-icon').append(frappe.utils.icon('es-solid-heart', 'md'))
+=======
+		$('.like-icon').append(`<svg class="icon icon-sm"><use href="#icon-heart"></use></svg>`)
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		toggle_like_icon(like);
 
 		$('.like-count').text(like_count);
@@ -38,4 +42,8 @@
 			});
 		}
 	});
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

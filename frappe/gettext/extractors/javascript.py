@@ -106,7 +106,11 @@ def extract_javascript(code, keywords=None, options=None, lineno=1):
 			if token.value in closing_operators:
 				tree_level -= 1
 
+<<<<<<< HEAD
 		elif call_stack == -1 and token.type == "linecomment" or token.type == "multilinecomment":
+=======
+		elif (call_stack == -1 and token.type == "linecomment") or token.type == "multilinecomment":
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			pass  # ignore comments
 
 		elif funcname and call_stack == 0:

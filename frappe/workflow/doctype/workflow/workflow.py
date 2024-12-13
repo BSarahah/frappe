@@ -3,8 +3,13 @@
 
 import frappe
 from frappe import _
+<<<<<<< HEAD
 from frappe.model import no_value_fields
 from frappe.model.document import Document
+=======
+from frappe.model.document import Document
+from frappe.utils import cint
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 
 class Workflow(Document):
@@ -29,8 +34,13 @@ class Workflow(Document):
 		workflow_data: DF.JSON | None
 		workflow_name: DF.Data
 		workflow_state_field: DF.Data
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		self.set_active()
 		self.create_custom_field_for_workflow_state()
@@ -110,7 +120,11 @@ class Workflow(Document):
 				frappe.throw(frappe._("Cannot cancel before submitting. See Transition {0}").format(t.idx))
 
 	def set_active(self):
+<<<<<<< HEAD
 		if int(self.is_active or 0):
+=======
+		if cint(self.is_active):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			# clear all other
 			frappe.db.sql(
 				"""UPDATE `tabWorkflow` SET `is_active`=0

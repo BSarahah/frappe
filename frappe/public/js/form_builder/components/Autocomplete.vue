@@ -19,7 +19,11 @@
 			<div class="combo-box-items">
 				<ComboboxOption
 					as="template"
+<<<<<<< HEAD
 					v-for="(field, i) in filteredOptions"
+=======
+					v-for="(field, i) in sortedOptions"
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 					:key="i"
 					:value="field"
 					v-slot="{ active }"
@@ -85,11 +89,24 @@ const selectedValue = computed({
 });
 
 const filteredOptions = computed(() => {
+<<<<<<< HEAD
 	return query.value
 		? props.options.filter((option) => {
 				return option.label.toLowerCase().includes(query.value.toLowerCase());
 		  })
 		: props.options;
+=======
+	if (!query.value) return props.options;
+	return props.options.filter((option) => {
+		return option.label.toLocaleLowerCase().includes(query.value.toLocaleLowerCase());
+	});
+});
+
+const sortedOptions = computed(() => {
+	return filteredOptions.value.sort((a, b) => {
+		return a.label.localeCompare(b.label);
+	});
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 });
 
 function clear_search() {
@@ -126,6 +143,11 @@ watch(showOptions, (val) => {
 	border-radius: var(--border-radius-sm);
 	padding: 6px 10px;
 	width: 100%;
+<<<<<<< HEAD
+=======
+	cursor: pointer;
+	user-select: none;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	&:hover,
 	&.active {

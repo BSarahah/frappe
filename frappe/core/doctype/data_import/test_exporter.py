@@ -3,12 +3,29 @@
 import frappe
 from frappe.core.doctype.data_import.exporter import Exporter
 from frappe.core.doctype.data_import.test_importer import create_doctype_if_not_exists
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
+=======
+from frappe.tests import IntegrationTestCase, UnitTestCase
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 doctype_name = "DocType for Export"
 
 
+<<<<<<< HEAD
 class TestExporter(FrappeTestCase):
+=======
+class UnitTestDataImport(UnitTestCase):
+	"""
+	Unit tests for DataImport.
+	Use this class for testing individual functions and methods.
+	"""
+
+	pass
+
+
+class TestExporter(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		create_doctype_if_not_exists(doctype_name)
 

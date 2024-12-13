@@ -18,14 +18,22 @@ from frappe.website.utils import can_cache, get_home_page
 
 
 class PathResolver:
+<<<<<<< HEAD
 	__slots__ = ("path", "http_status_code")
+=======
+	__slots__ = ("http_status_code", "path")
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	def __init__(self, path, http_status_code=None):
 		self.path = path.strip("/ ")
 		self.http_status_code = http_status_code
 
 	def resolve(self):
+<<<<<<< HEAD
 		"""Returns endpoint and a renderer instance that can render the endpoint"""
+=======
+		"""Return endpoint and a renderer instance that can render the endpoint."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		request = frappe._dict()
 		if hasattr(frappe.local, "request"):
 			request = frappe.local.request or request

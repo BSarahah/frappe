@@ -23,5 +23,11 @@ class WorkflowTransition(Document):
 		parentfield: DF.Data
 		parenttype: DF.Data
 		state: DF.Link
+<<<<<<< HEAD
 	# end: auto-generated types
+=======
+		workflow_builder_id: DF.Data | None
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

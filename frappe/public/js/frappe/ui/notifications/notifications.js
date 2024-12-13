@@ -325,10 +325,18 @@ class NotificationsView extends BaseNotificationsView {
 	}
 
 	get_notifications_list(limit) {
+<<<<<<< HEAD
 		return frappe.call(
 			"frappe.desk.doctype.notification_log.notification_log.get_notification_logs",
 			{ limit: limit }
 		);
+=======
+		return frappe.call({
+			method: "frappe.desk.doctype.notification_log.notification_log.get_notification_logs",
+			args: { limit: limit },
+			type: "GET",
+		});
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	}
 
 	get_item_link(notification_doc) {
@@ -385,10 +393,21 @@ class EventsView extends BaseNotificationsView {
 	make() {
 		let today = frappe.datetime.get_today();
 		frappe
+<<<<<<< HEAD
 			.xcall("frappe.desk.doctype.event.event.get_events", {
 				start: today,
 				end: today,
 			})
+=======
+			.xcall(
+				"frappe.desk.doctype.event.event.get_events",
+				{
+					start: today,
+					end: today,
+				},
+				"GET"
+			)
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			.then((event_list) => {
 				this.render_events_html(event_list);
 			});

@@ -19,8 +19,13 @@ class WebsiteMetaTag(Document):
 		parentfield: DF.Data
 		parenttype: DF.Data
 		value: DF.Text
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def get_content(self):
 		# can't have new lines in meta content
 		return (self.value or "").replace("\n", " ")

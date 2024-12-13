@@ -99,12 +99,16 @@ class PrintFormatGenerator:
 		return header_html, footer_html
 
 	def render_pdf(self):
+<<<<<<< HEAD
 		"""
 		Returns
 		-------
 		pdf: a bytes sequence
 		        The rendered PDF.
 		"""
+=======
+		"""Return a bytes sequence of the rendered PDF."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		HTML, CSS = import_weasyprint()
 
 		self._make_header_footer()

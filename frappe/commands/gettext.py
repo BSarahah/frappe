@@ -2,12 +2,20 @@ import click
 
 from frappe.commands import pass_context
 from frappe.exceptions import SiteNotSpecifiedError
+<<<<<<< HEAD
+=======
+from frappe.utils.bench_helper import CliCtxObj
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 
 @click.command("generate-pot-file", help="Translation: generate POT file")
 @click.option("--app", help="Only generate for this app. eg: frappe")
 @pass_context
+<<<<<<< HEAD
 def generate_pot_file(context, app: str | None = None):
+=======
+def generate_pot_file(context: CliCtxObj, app: str | None = None):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	from frappe.gettext.translate import generate_pot
 
 	if not app:
@@ -26,7 +34,11 @@ def generate_pot_file(context, app: str | None = None):
 )
 @click.option("--locale", help="Compile transaltions only for this locale. eg: de")
 @pass_context
+<<<<<<< HEAD
 def compile_translations(context, app: str | None = None, locale: str | None = None, force=False):
+=======
+def compile_translations(context: CliCtxObj, app: str | None = None, locale: str | None = None, force=False):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	from frappe.gettext.translate import compile_translations as _compile_translations
 
 	if not app:
@@ -39,7 +51,11 @@ def compile_translations(context, app: str | None = None, locale: str | None = N
 @click.option("--app", help="Only migrate for this app. eg: frappe")
 @click.option("--locale", help="Compile translations only for this locale. eg: de")
 @pass_context
+<<<<<<< HEAD
 def csv_to_po(context, app: str | None = None, locale: str | None = None):
+=======
+def csv_to_po(context: CliCtxObj, app: str | None = None, locale: str | None = None):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	from frappe.gettext.translate import migrate
 
 	if not app:
@@ -56,7 +72,11 @@ You might want to run generate-pot-file first.""",
 @click.option("--app", help="Only update for this app. eg: frappe")
 @click.option("--locale", help="Update PO files only for this locale. eg: de")
 @pass_context
+<<<<<<< HEAD
 def update_po_files(context, app: str | None = None, locale: str | None = None):
+=======
+def update_po_files(context: CliCtxObj, app: str | None = None, locale: str | None = None):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	from frappe.gettext.translate import update_po
 
 	if not app:
@@ -69,7 +89,11 @@ def update_po_files(context, app: str | None = None, locale: str | None = None):
 @click.argument("locale", nargs=1)
 @click.option("--app", help="Only create for this app. eg: frappe")
 @pass_context
+<<<<<<< HEAD
 def create_po_file(context, locale: str, app: str | None = None):
+=======
+def create_po_file(context: CliCtxObj, locale: str, app: str | None = None):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	"""Create PO file for lang code"""
 	from frappe.gettext.translate import new_po
 
@@ -79,6 +103,7 @@ def create_po_file(context, locale: str, app: str | None = None):
 	new_po(locale, app)
 
 
+<<<<<<< HEAD
 @click.command("update-csv-from-po")
 @click.argument("app", nargs=1)
 @click.argument("locale", nargs=1)
@@ -98,6 +123,8 @@ def update_csv_from_po(app: str, locale: str) -> None:
 	update_csv_from_po(app, locale)
 
 
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 def connect_to_site(site):
 	from frappe import connect
 
@@ -113,5 +140,8 @@ commands = [
 	csv_to_po,
 	update_po_files,
 	create_po_file,
+<<<<<<< HEAD
 	update_csv_from_po,
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 ]

@@ -8,11 +8,19 @@ from werkzeug.wrappers import Response
 import frappe
 import frappe.rate_limiter
 from frappe.rate_limiter import RateLimiter
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import cint
 
 
 class TestRateLimiter(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+from frappe.utils import cint
+
+
+class TestRateLimiter(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def test_apply_with_limit(self):
 		frappe.conf.rate_limit = {"window": 86400, "limit": 1}
 		frappe.rate_limiter.apply()

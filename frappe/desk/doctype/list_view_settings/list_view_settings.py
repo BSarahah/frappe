@@ -22,6 +22,10 @@ class ListViewSettings(Document):
 		fields: DF.Code | None
 		total_fields: DF.Literal["", "4", "5", "6", "7", "8", "9", "10"]
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass
 
 

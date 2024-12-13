@@ -10,7 +10,11 @@ frappe.ui.form.ControlCheck = class ControlCheck extends frappe.ui.form.ControlD
 					<span class="label-area"></span>
 					<span class="ml-1 help"></span>
 				</label>
+<<<<<<< HEAD
 				<p class="help-box small text-muted"></p>
+=======
+				<p class="help-box small text-extra-muted"></p>
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			</div>
 		</div>`).appendTo(this.parent);
 	}

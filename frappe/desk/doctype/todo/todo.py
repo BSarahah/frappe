@@ -34,6 +34,10 @@ class ToDo(Document):
 		sender: DF.Data | None
 		status: DF.Literal["Open", "Closed", "Cancelled"]
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	DocType = "ToDo"
 
 	def validate(self):
@@ -135,7 +139,11 @@ class ToDo(Document):
 
 	@classmethod
 	def get_owners(cls, filters=None):
+<<<<<<< HEAD
 		"""Returns list of owners after applying filters on todo's."""
+=======
+		"""Return list of owners after applying filters on ToDos."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		rows = frappe.get_all(cls.DocType, filters=filters or {}, fields=["allocated_to"])
 		return [parse_addr(row.allocated_to)[1] for row in rows if row.allocated_to]
 

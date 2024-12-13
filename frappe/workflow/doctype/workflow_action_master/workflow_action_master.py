@@ -15,4 +15,8 @@ class WorkflowActionMaster(Document):
 
 		workflow_action_name: DF.Data
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

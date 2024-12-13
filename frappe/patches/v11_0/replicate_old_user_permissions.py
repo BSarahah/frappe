@@ -37,7 +37,11 @@ def execute():
 
 
 def get_doctypes_to_skip(doctype, user):
+<<<<<<< HEAD
 	"""Returns doctypes to be skipped from user permission check"""
+=======
+	"""Return doctypes to be skipped from user permission check."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	doctypes_to_skip = []
 	valid_perms = get_user_valid_perms(user) or []
 	for perm in valid_perms:

@@ -38,6 +38,10 @@ frappe.query_reports["Website Analytics"] = {
 				{ value: "source", label: __("Source") },
 				{ value: "campaign", label: __("Campaign") },
 				{ value: "medium", label: __("Medium") },
+<<<<<<< HEAD
+=======
+				{ value: "content", label: __("Content") },
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			],
 			default: "path",
 		},

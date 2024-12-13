@@ -9,3 +9,8 @@
 **.js,frappe.gettext.extractors.javascript.extract
 **.html,frappe.gettext.extractors.html_template.extract
 **.vue,frappe.gettext.extractors.html_template.extract
+<<<<<<< HEAD
+=======
+**/custom/*.json,frappe.gettext.extractors.customization.extract
+**/fixtures/custom_field.json,frappe.gettext.extractors.custom_field.extract
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

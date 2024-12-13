@@ -34,12 +34,17 @@ def bootstrap_database(verbose=None, source_sql=None):
 		return frappe.database.mariadb.setup_db.bootstrap_database(verbose, source_sql)
 
 
+<<<<<<< HEAD
 def drop_user_and_database(db_name, root_login=None, root_password=None):
+=======
+def drop_user_and_database(db_name, db_user):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	import frappe
 
 	if frappe.conf.db_type == "postgres":
 		import frappe.database.postgres.setup_db
 
+<<<<<<< HEAD
 		return frappe.database.postgres.setup_db.drop_user_and_database(db_name, root_login, root_password)
 	else:
 		import frappe.database.mariadb.setup_db
@@ -48,24 +53,46 @@ def drop_user_and_database(db_name, root_login=None, root_password=None):
 
 
 def get_db(host=None, user=None, password=None, port=None, cur_db_name=None, socket=None):
+=======
+		return frappe.database.postgres.setup_db.drop_user_and_database(db_name, db_user)
+	else:
+		import frappe.database.mariadb.setup_db
+
+		return frappe.database.mariadb.setup_db.drop_user_and_database(db_name, db_user)
+
+
+def get_db(socket=None, host=None, user=None, password=None, port=None, cur_db_name=None):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	import frappe
 
 	if frappe.conf.db_type == "postgres":
 		import frappe.database.postgres.database
 
 		return frappe.database.postgres.database.PostgresDatabase(
+<<<<<<< HEAD
 			host, user, password, port, cur_db_name, socket
+=======
+			socket, host, user, password, port, cur_db_name
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		)
 	else:
 		import frappe.database.mariadb.database
 
 		return frappe.database.mariadb.database.MariaDBDatabase(
+<<<<<<< HEAD
 			host, user, password, port, cur_db_name, socket
+=======
+			socket, host, user, password, port, cur_db_name
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		)
 
 
 def get_command(
+<<<<<<< HEAD
 	host=None, port=None, user=None, password=None, db_name=None, extra=None, dump=False, socket=None
+=======
+	socket=None, host=None, port=None, user=None, password=None, db_name=None, extra=None, dump=False
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 ):
 	import frappe
 

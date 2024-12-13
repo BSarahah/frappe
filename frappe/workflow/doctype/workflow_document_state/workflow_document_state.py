@@ -28,4 +28,8 @@ class WorkflowDocumentState(Document):
 		update_value: DF.Data | None
 		workflow_builder_id: DF.Data | None
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

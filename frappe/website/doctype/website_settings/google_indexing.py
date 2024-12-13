@@ -36,7 +36,11 @@ def authorize_access(reauthorize=False, code=None):
 
 
 def get_google_indexing_object():
+<<<<<<< HEAD
 	"""Returns an object of Google Indexing object."""
+=======
+	"""Return an object of Google Indexing object."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	account = frappe.get_doc("Website Settings")
 	oauth_obj = GoogleOAuth("indexing")
 

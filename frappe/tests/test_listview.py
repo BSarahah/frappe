@@ -5,10 +5,17 @@ import json
 import frappe
 from frappe.desk.listview import get_group_by_count, get_list_settings, set_list_settings
 from frappe.desk.reportview import get
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestListView(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestListView(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		if frappe.db.exists("List View Settings", "DocType"):
 			frappe.delete_doc("List View Settings", "DocType")

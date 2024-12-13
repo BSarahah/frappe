@@ -52,7 +52,11 @@ export default class Shortcut extends Block {
 
 		if (this.data && this.data.shortcut_name) {
 			let has_data = this.make("shortcut", this.data.shortcut_name);
+<<<<<<< HEAD
 			if (!has_data) return;
+=======
+			if (!has_data) return this.wrapper;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		}
 
 		if (!this.readOnly) {

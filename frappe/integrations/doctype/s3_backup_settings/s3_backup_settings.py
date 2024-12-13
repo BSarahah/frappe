@@ -38,8 +38,13 @@ class S3BackupSettings(Document):
 		notify_email: DF.Data
 		secret_access_key: DF.Password
 		send_email_for_successful_backup: DF.Check
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		if not self.enabled:
 			return

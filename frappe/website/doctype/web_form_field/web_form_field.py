@@ -62,4 +62,8 @@ class WebFormField(Document):
 		reqd: DF.Check
 		show_in_filter: DF.Check
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

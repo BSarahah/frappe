@@ -4,8 +4,21 @@
 	border-bottom: 1px solid var(--border-color);
 	padding: 0;
 	.navbar-brand {
+<<<<<<< HEAD
 		margin-right: 0;
 	}
+=======
+		margin-right: 15px;
+	}
+
+	@include media-breakpoint-up(md) {
+		.navbar-brand {
+			// not shown for full screen
+			display: none;
+		}
+	}
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	.navbar-nav {
 		.dropdown-item {
 			padding: 6px 8px !important;
@@ -34,7 +47,11 @@
 
 .navbar-home {
 	img {
+<<<<<<< HEAD
 		max-height: 28px;
+=======
+		height: 28px;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		width: auto;
 	}
 }

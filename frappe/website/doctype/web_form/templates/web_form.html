@@ -4,6 +4,12 @@
 	{% include "templates/includes/meta_block.html" %}
 {% endblock %}
 
+<<<<<<< HEAD
+=======
+{% if hide_navbar %}{% block navbar %}{% endblock %}{% endif %}
+{% if hide_footer %}{% block footer %}{% endblock %}{% endif %}
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 {% block breadcrumbs %}{% endblock %}
 
 {% block header %}
@@ -160,7 +166,11 @@
 
 {% block script %}
 	<script>
+<<<<<<< HEAD
 		frappe.boot = {{ boot }};
+=======
+		frappe.boot = {{ boot | json }};
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		frappe._messages = {{ translated_messages }};
 		frappe.web_form_doc = {{ web_form_doc | json }};
 		frappe.reference_doc = {{ reference_doc | json }};

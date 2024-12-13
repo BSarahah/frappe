@@ -27,7 +27,11 @@ def execute(filters=None):
 	todo_list.sort(
 		key=lambda todo: (
 			priority_map.get(todo.priority, 0),
+<<<<<<< HEAD
 			todo.date and getdate(todo.date) or getdate("1900-01-01"),
+=======
+			(todo.date and getdate(todo.date)) or getdate("1900-01-01"),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		),
 		reverse=True,
 	)

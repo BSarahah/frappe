@@ -19,8 +19,13 @@ class EmailUnsubscribe(Document):
 		global_unsubscribe: DF.Check
 		reference_doctype: DF.Link | None
 		reference_name: DF.DynamicLink | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		if not self.global_unsubscribe and not (self.reference_doctype and self.reference_name):
 			frappe.throw(_("Reference DocType and Reference Name are required"), frappe.MandatoryError)

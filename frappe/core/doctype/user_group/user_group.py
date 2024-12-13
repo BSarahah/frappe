@@ -18,8 +18,13 @@ class UserGroup(Document):
 		from frappe.types import DF
 
 		user_group_members: DF.TableMultiSelect[UserGroupMember]
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def after_insert(self):
 		frappe.cache.delete_key("user_groups")
 

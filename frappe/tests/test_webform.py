@@ -1,11 +1,19 @@
 import frappe
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
+=======
+from frappe.tests import IntegrationTestCase
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.utils import set_request
 from frappe.website.serve import get_response
 from frappe.www.list import get_list_context
 
 
+<<<<<<< HEAD
 class TestWebform(FrappeTestCase):
+=======
+class TestWebform(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def test_webform_publish_functionality(self):
 		request_data = frappe.get_doc("Web Form", "request-data")
 		# publish webform

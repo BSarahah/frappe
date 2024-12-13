@@ -32,7 +32,11 @@ export default class Card extends Block {
 
 		if (this.data && this.data.card_name) {
 			let has_data = this.make("card", this.data.card_name, "links");
+<<<<<<< HEAD
 			if (!has_data) return;
+=======
+			if (!has_data) return this.wrapper;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		}
 
 		if (!this.readOnly) {

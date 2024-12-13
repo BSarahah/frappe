@@ -5,6 +5,10 @@ import datetime
 
 import frappe
 import frappe.defaults
+<<<<<<< HEAD
+=======
+from frappe.locale import get_date_format
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.utils import add_to_date, get_datetime, getdate
 from frappe.utils.data import (
 	get_first_day,
@@ -75,7 +79,11 @@ def parse_date(date):
 
 def get_user_date_format():
 	if getattr(frappe.local, "user_date_format", None) is None:
+<<<<<<< HEAD
 		frappe.local.user_date_format = frappe.defaults.get_global_default("date_format") or "yyyy-mm-dd"
+=======
+		frappe.local.user_date_format = get_date_format()
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	return frappe.local.user_date_format
 

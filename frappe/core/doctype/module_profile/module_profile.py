@@ -16,9 +16,21 @@ class ModuleProfile(Document):
 
 		block_modules: DF.Table[BlockModule]
 		module_profile_name: DF.Data
+<<<<<<< HEAD
 
 	# end: auto-generated types
 	def onload(self):
 		from frappe.config import get_modules_from_all_apps
 
 		self.set_onload("all_modules", sorted(m.get("module_name") for m in get_modules_from_all_apps()))
+=======
+	# end: auto-generated types
+
+	def onload(self):
+		from frappe.utils.modules import get_modules_from_all_apps
+
+		self.set_onload("all_modules", sorted(m.get("module_name") for m in get_modules_from_all_apps()))
+
+	def get_permission_log_options(self, event=None):
+		return {"fields": ["block_modules"]}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

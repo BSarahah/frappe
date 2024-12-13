@@ -4,10 +4,17 @@ from random import choice
 import frappe
 from frappe.model import core_doctypes_list, get_permitted_fields, is_default_field
 from frappe.model.utils import get_fetch_values
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestModelUtils(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestModelUtils(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def test_get_fetch_values(self):
 		doctype = "ToDo"
 

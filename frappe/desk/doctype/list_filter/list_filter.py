@@ -18,4 +18,8 @@ class ListFilter(Document):
 		for_user: DF.Link | None
 		reference_doctype: DF.Link | None
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

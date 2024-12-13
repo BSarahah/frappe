@@ -25,8 +25,13 @@ class DocTypeLayout(Document):
 		document_type: DF.Link
 		fields: DF.Table[DocTypeLayoutField]
 		route: DF.Data
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		if not self.route:
 			self.route = slug(self.name)

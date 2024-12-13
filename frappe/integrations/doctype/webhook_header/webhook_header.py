@@ -14,10 +14,20 @@ class WebhookHeader(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
+<<<<<<< HEAD
 		key: DF.Data | None
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
 		value: DF.Data | None
 	# end: auto-generated types
+=======
+		key: DF.SmallText | None
+		parent: DF.Data
+		parentfield: DF.Data
+		parenttype: DF.Data
+		value: DF.SmallText | None
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

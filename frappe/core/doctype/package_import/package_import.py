@@ -26,8 +26,13 @@ class PackageImport(Document):
 		attach_package: DF.Attach | None
 		force: DF.Check
 		log: DF.Code | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		if self.activate:
 			self.import_package()

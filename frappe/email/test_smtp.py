@@ -4,10 +4,17 @@
 import frappe
 from frappe.email.doctype.email_account.email_account import EmailAccount
 from frappe.email.smtp import SMTPServer
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestSMTP(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestSMTP(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def test_smtp_ssl_session(self):
 		for port in [None, 0, 465, "465"]:
 			make_server(port, 1, 0)

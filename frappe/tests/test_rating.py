@@ -1,9 +1,16 @@
 import frappe
 from frappe.core.doctype.doctype.test_doctype import new_doctype
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestRating(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestRating(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		doc = new_doctype(
 			fields=[

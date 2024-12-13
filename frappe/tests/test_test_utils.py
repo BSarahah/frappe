@@ -1,11 +1,19 @@
 from datetime import timedelta
 
 import frappe
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils.data import now_datetime
 
 
 class TestTestUtils(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+from frappe.utils.data import now_datetime
+
+
+class TestTestUtils(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	SHOW_TRANSACTION_COMMIT_WARNINGS = True
 
 	def test_document_assertions(self):
@@ -22,7 +30,13 @@ class TestTestUtils(FrappeTestCase):
 	def test_temp_setting_changes(self):
 		current_setting = frappe.get_system_settings("logout_on_password_reset")
 
+<<<<<<< HEAD
 		with change_settings("System Settings", {"logout_on_password_reset": int(not current_setting)}):
+=======
+		with IntegrationTestCase.change_settings(
+			"System Settings", {"logout_on_password_reset": int(not current_setting)}
+		):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			updated_settings = frappe.get_system_settings("logout_on_password_reset")
 			self.assertNotEqual(current_setting, updated_settings)
 

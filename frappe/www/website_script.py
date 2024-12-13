@@ -12,7 +12,11 @@ def get_context(context):
 	context.javascript = frappe.db.get_single_value("Website Script", "javascript") or ""
 
 	theme = get_active_theme()
+<<<<<<< HEAD
 	js = strip(theme and theme.js or "")
+=======
+	js = strip((theme and theme.js) or "")
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	if js:
 		context.javascript += "\n" + js
 

@@ -32,6 +32,10 @@ class SlackWebhookURL(Document):
 		webhook_name: DF.Data
 		webhook_url: DF.Data
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass
 
 

@@ -1,19 +1,31 @@
 # Copyright (c) 2022, Frappe Technologies Pvt. Ltd. and Contributors
 # License: MIT. See LICENSE
 
+<<<<<<< HEAD
 import typing
 from functools import cached_property, wraps
 from types import NoneType
+=======
+from functools import cached_property, wraps
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 import frappe
 from frappe.query_builder.builder import MariaDB, Postgres
 from frappe.query_builder.functions import Function
+<<<<<<< HEAD
 
 if typing.TYPE_CHECKING:
 	from frappe.query_builder import DocType
 
 Query = str | MariaDB | Postgres
 QueryValues = tuple | list | dict | None
+=======
+from frappe.types import DocRef
+
+Query = str | MariaDB | Postgres
+QueryValues = tuple | list | dict | None
+FilterValue = DocRef | str | int | bool
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 EmptyQueryValues = object()
 FallBackDateTimeStr = "0001-01-01 00:00:00.000000"
@@ -27,7 +39,19 @@ NestedSetHierarchy = (
 )
 
 
+<<<<<<< HEAD
 def is_query_type(query: str, query_type: str | tuple[str]) -> bool:
+=======
+def convert_to_value(o: FilterValue):
+	if hasattr(o, "__value__"):
+		return o.__value__()
+	if isinstance(o, bool):
+		return int(o)
+	return o
+
+
+def is_query_type(query: str, query_type: str | tuple[str, ...]) -> bool:
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	return query.lstrip().split(maxsplit=1)[0].lower().startswith(query_type)
 
 
@@ -43,7 +67,11 @@ def get_doctype_name(table_name: str) -> str:
 
 
 class LazyString:
+<<<<<<< HEAD
 	def _setup(self) -> None:
+=======
+	def _setup(self) -> str:
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		raise NotImplementedError
 
 	@cached_property
@@ -63,7 +91,11 @@ class LazyDecode(LazyString):
 	def __init__(self, value: str) -> None:
 		self._value = value
 
+<<<<<<< HEAD
 	def _setup(self) -> None:
+=======
+	def _setup(self) -> str:
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		return self._value.decode()
 
 

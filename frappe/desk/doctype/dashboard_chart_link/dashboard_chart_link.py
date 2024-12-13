@@ -20,4 +20,8 @@ class DashboardChartLink(Document):
 		parenttype: DF.Data
 		width: DF.Literal["Half", "Full"]
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

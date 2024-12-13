@@ -28,8 +28,13 @@ class OAuthClient(Document):
 		scopes: DF.Text
 		skip_authorization: DF.Check
 		user: DF.Link | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		self.client_id = self.name
 		if not self.client_secret:
@@ -38,11 +43,16 @@ class OAuthClient(Document):
 		self.add_default_role()
 
 	def validate_grant_and_response(self):
+<<<<<<< HEAD
 		if (
 			self.grant_type == "Authorization Code"
 			and self.response_type != "Code"
 			or self.grant_type == "Implicit"
 			and self.response_type != "Token"
+=======
+		if (self.grant_type == "Authorization Code" and self.response_type != "Code") or (
+			self.grant_type == "Implicit" and self.response_type != "Token"
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		):
 			frappe.throw(
 				_(

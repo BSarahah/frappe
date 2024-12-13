@@ -5,11 +5,28 @@ from datetime import datetime
 
 import frappe
 from frappe.core.doctype.log_settings.log_settings import _supports_log_clearing, run_log_clean_up
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_to_date, now_datetime
 
 
 class TestLogSettings(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase, UnitTestCase
+from frappe.utils import add_to_date, now_datetime
+
+
+class UnitTestLogSettings(UnitTestCase):
+	"""
+	Unit tests for LogSettings.
+	Use this class for testing individual functions and methods.
+	"""
+
+	pass
+
+
+class TestLogSettings(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()

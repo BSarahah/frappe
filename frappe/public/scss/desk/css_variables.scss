@@ -20,7 +20,11 @@
 	--error-border: var(--red-400);
 
 	// page
+<<<<<<< HEAD
 	--page-head-height: 60px;
+=======
+	--page-head-height: 45px;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	--page-bottom-margin: 60px;
 
 	// checkbox
@@ -50,4 +54,15 @@
 
 	// progress bar
 	--progress-bar-bg: var(--primary);
+<<<<<<< HEAD
+=======
+
+	// list
+	--list-row-height: 30px;
+	--list-checkbox-padding: calc((var(--list-row-height) - var(--checkbox-size)) / 2);
+
+	@include media-breakpoint-down(md) {
+		--checkbox-size: 18px;
+	}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 }

@@ -42,8 +42,13 @@ class OnboardingStep(Document):
 		validate_action: DF.Check
 		value_to_validate: DF.Data | None
 		video_url: DF.Data | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def before_export(self, doc):
 		doc.is_complete = 0
 		doc.is_skipped = 0

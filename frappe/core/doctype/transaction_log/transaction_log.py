@@ -28,8 +28,13 @@ class TransactionLog(Document):
 		row_index: DF.Data | None
 		timestamp: DF.Datetime | None
 		transaction_hash: DF.SmallText | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def before_insert(self):
 		index = get_current_index()
 		self.row_index = index

@@ -26,7 +26,11 @@ frappe.ui.form.on("Web Form", {
 	refresh: function (frm) {
 		// get iframe url for web form
 		frm.sidebar
+<<<<<<< HEAD
 			.add_user_action(__("Copy Embed Code"))
+=======
+			.add_user_action(__("Copy embed code"))
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			.attr("href", "#")
 			.on("click", () => {
 				const url = frappe.urllib.get_full_url(frm.doc.route);
@@ -70,7 +74,11 @@ frappe.ui.form.on("Web Form", {
 
 		if (!frm.doc.web_form_fields) {
 			frm.scroll_to_field("web_form_fields");
+<<<<<<< HEAD
 			frappe.throw(__("Atleast one field is required in Web Form Fields Table"));
+=======
+			frappe.throw(__("At least one field is required in Web Form Fields Table"));
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		}
 
 		let page_break_count = frm.doc.web_form_fields.filter(

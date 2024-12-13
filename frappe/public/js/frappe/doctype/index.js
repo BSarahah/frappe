@@ -78,6 +78,10 @@ frappe.model.DocTypeController = class DocTypeController extends frappe.ui.form.
 				Expression: "format:",
 				"Expression (sld style)": "",
 				Random: "hash",
+<<<<<<< HEAD
+=======
+				UUID: "UUID",
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				"By script": "",
 			};
 			this.frm.set_value(

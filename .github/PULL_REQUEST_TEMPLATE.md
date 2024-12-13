@@ -30,4 +30,8 @@ Also, if you're new here
 
 > Screenshots/GIFs
 
+<<<<<<< HEAD
 <!-- Add images/recordings to better visualize the change: expected/current behviour -->
+=======
+<!-- Add images/recordings to better visualize the change: expected/current behavior -->
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

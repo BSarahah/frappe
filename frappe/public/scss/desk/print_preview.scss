@@ -7,7 +7,10 @@
 .print-preview-wrapper {
 	padding: 80px 0;
 	background-color: var(--gray-200);
+<<<<<<< HEAD
 	border-radius: var(--border-radius);
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	@include media-breakpoint-down(md) {
 		padding: 0;
@@ -43,7 +46,12 @@
 }
 
 .layout-side-section.print-preview-sidebar {
+<<<<<<< HEAD
 	padding-right: var(--padding-md);
+=======
+	padding: var(--padding-md);
+	border-left: 0px;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	.checkbox label {
 		align-items: unset;

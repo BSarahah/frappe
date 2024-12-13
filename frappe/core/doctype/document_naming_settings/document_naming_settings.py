@@ -35,8 +35,13 @@ class DocumentNamingSettings(Document):
 		transaction_type: DF.Autocomplete | None
 		try_naming_series: DF.Data | None
 		user_must_always_select: DF.Check
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	@frappe.whitelist()
 	def get_transactions_and_prefixes(self):
 		transactions = self._get_transactions()

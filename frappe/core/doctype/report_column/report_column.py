@@ -37,4 +37,8 @@ class ReportColumn(Document):
 		parenttype: DF.Data
 		width: DF.Int
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

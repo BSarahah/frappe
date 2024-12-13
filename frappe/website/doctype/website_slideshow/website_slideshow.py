@@ -23,8 +23,13 @@ class WebsiteSlideshow(Document):
 		header: DF.HTMLEditor | None
 		slideshow_items: DF.Table[WebsiteSlideshowItem]
 		slideshow_name: DF.Data
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		self.validate_images()
 

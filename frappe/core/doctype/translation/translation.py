@@ -25,8 +25,13 @@ class Translation(Document):
 		language: DF.Link
 		source_text: DF.Code
 		translated_text: DF.Code
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		if is_html(self.source_text):
 			self.remove_html_from_source()

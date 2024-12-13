@@ -107,6 +107,7 @@ class FullTextSearch:
 
 		writer.commit(optimize=True)
 
+<<<<<<< HEAD
 	def search(self, text, scope=None, limit=20):
 		"""Search from the current index
 
@@ -117,6 +118,15 @@ class FullTextSearch:
 
 		Returns:
 		        [List(_dict)]: Search results
+=======
+	def search(self, text: str, scope: str | None = None, limit: int = 20) -> list[frappe._dict]:
+		"""Search from the current index.
+
+		Args:
+		        text: String to search for
+		        scope: Scope to limit the search. Defaults to None.
+		        limit: Limit number of search results. Defaults to 20.
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		"""
 		ix = self.get_index()
 

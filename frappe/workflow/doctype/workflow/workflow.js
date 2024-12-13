@@ -137,7 +137,11 @@ frappe.ui.form.on("Workflow", {
 		};
 
 		frappe.warn(
+<<<<<<< HEAD
 			__("Worflow States Don't Exist"),
+=======
+			__("Workflow States Don't Exist"),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			message_html,
 			proceed_action,
 			__("Save Anyway")

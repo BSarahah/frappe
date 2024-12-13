@@ -3,7 +3,11 @@
 
 # model __init__.py
 import frappe
+<<<<<<< HEAD
 from frappe import _
+=======
+from frappe import _, _lt
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 data_fieldtypes = (
 	"Currency",
@@ -190,7 +194,11 @@ def delete_fields(args_dict, delete=0):
 			)
 		else:
 			existing_fields = frappe.db.describe(dt)
+<<<<<<< HEAD
 			existing_fields = existing_fields and [e[0] for e in existing_fields] or []
+=======
+			existing_fields = (existing_fields and [e[0] for e in existing_fields]) or []
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			fields_need_to_delete = set(fields) & set(existing_fields)
 			if not fields_need_to_delete:
 				continue
@@ -199,8 +207,13 @@ def delete_fields(args_dict, delete=0):
 				# mariadb implicitly commits before DDL, make it explicit
 				frappe.db.commit()
 
+<<<<<<< HEAD
 			query = "ALTER TABLE `tab%s` " % dt + ", ".join(
 				"DROP COLUMN `%s`" % f for f in fields_need_to_delete
+=======
+			query = "ALTER TABLE `tab{}` ".format(dt) + ", ".join(
+				"DROP COLUMN `{}`".format(f) for f in fields_need_to_delete
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			)
 			frappe.db.sql(query)
 

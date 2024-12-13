@@ -21,6 +21,10 @@ class EmailQueueRecipient(Document):
 		recipient: DF.Data | None
 		status: DF.Literal["", "Not Sent", "Sent"]
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	DOCTYPE = "Email Queue Recipient"
 
 	def is_mail_to_be_sent(self):

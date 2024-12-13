@@ -4,7 +4,11 @@
 </div>
 <div class="print-format-builder-sidebar-fields">
 	{% for (var i=0, l=fields.length; i < l; i++) { var f = fields[i]; %}
+<<<<<<< HEAD
 		{% if(!in_list(["Section Break", "Tab Break", "Column Break", "Fold"], f.fieldtype)) { %}
+=======
+		{% if(!["Section Break", "Tab Break", "Column Break", "Fold"].includes(f.fieldtype)) { %}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		<div class="print-format-builder-field-placeholder"
 			data-fieldname="{%= f.fieldname %}">
 			<div title="{{f.label}}" class="field-label btn btn-default btn-sm sidebar-field ellipsis

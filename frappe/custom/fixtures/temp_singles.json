@@ -24,7 +24,11 @@
   "allow_import": 0,
   "allow_events_in_timeline": 0,
   "allow_auto_repeat": 0,
+<<<<<<< HEAD
   "sort_field": "modified",
+=======
+  "sort_field": "creation",
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
   "sort_order": "DESC",
   "document_type": "",
   "show_preview_popup": 0,

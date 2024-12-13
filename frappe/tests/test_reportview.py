@@ -3,10 +3,17 @@
 
 import frappe
 from frappe.desk.reportview import export_query, extract_fieldnames
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestReportview(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestReportview(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def test_csv(self):
 		from csv import QUOTE_ALL, QUOTE_MINIMAL, QUOTE_NONE, QUOTE_NONNUMERIC, DictReader
 		from io import StringIO

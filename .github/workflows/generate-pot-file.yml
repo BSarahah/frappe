@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 # This workflow is agnostic to branches. Only maintain on develop branch.
 # To add/remove branches just modify the matrix.
 
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 name: Regenerate POT file (translatable strings)
 on:
   schedule:
@@ -15,7 +18,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+<<<<<<< HEAD
         branch: ["version-15-hotfix"]
+=======
+        branch: ["develop"]
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
     permissions:
       contents: write
 
@@ -28,7 +35,11 @@ jobs:
         - name: Setup Python
           uses: actions/setup-python@v5
           with:
+<<<<<<< HEAD
             python-version: "3.12"
+=======
+            python-version: "3.13"
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
         - name: Run script to update POT file
           run: |

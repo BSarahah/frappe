@@ -19,6 +19,10 @@ module.exports = {
 				"revert",
 				"style",
 				"test",
+<<<<<<< HEAD
+=======
+				"deprecate", // deprecation decision
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			],
 		],
 	},

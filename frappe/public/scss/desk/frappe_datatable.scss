@@ -17,7 +17,11 @@
 	--dt-selection-highlight-color: var(--highlight-color);
 
 	background-color: var(--bg-color);
+<<<<<<< HEAD
 	margin-left: -5px;
+=======
+	margin-left: -1px;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	margin-top: 0px;
 	@include get_textstyle("base", "regular");
 

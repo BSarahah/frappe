@@ -14,10 +14,17 @@ from frappe.email.email_body import (
 	replace_filename_with_cid,
 )
 from frappe.email.receive import Email
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestEmailBody(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestEmailBody(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		email_html = """
 <div>
@@ -201,6 +208,13 @@ Reply-To: test2_@erpnext.com
 		)
 		self.assertIn("user@example.com", mail)
 
+<<<<<<< HEAD
+=======
+	def test_poorly_encoded_messages2(self):
+		mail = Email.decode_email(" =?UTF-8?B?X\xe0\xe0Y?=  <xy@example.com>")
+		self.assertIn("xy@example.com", mail)
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 def fixed_column_width(string, chunk_size):
 	parts = [string[0 + i : chunk_size + i] for i in range(0, len(string), chunk_size)]

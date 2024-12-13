@@ -121,7 +121,11 @@ frappe.listview_settings["User Permission"] = {
 						callback: function (r) {
 							if (r.message === 1) {
 								frappe.show_alert({
+<<<<<<< HEAD
 									message: __("User Permissions created sucessfully"),
+=======
+									message: __("User Permissions created successfully"),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 									indicator: "blue",
 								});
 							} else {

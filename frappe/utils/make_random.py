@@ -48,7 +48,11 @@ def get_random(doctype: str, filters: dict | None = None, doc: bool = False):
 		}
 	)
 
+<<<<<<< HEAD
 	out = out and out[0][0] or None
+=======
+	out = (out and out[0][0]) or None
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	if doc and out:
 		return frappe.get_doc(doctype, out)

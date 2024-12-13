@@ -4,10 +4,26 @@ import textwrap
 
 import frappe
 from frappe.email.doctype.email_queue.email_queue import SendMailContext, get_email_retry_limit
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestEmailQueue(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase, UnitTestCase
+
+
+class UnitTestEmailQueue(UnitTestCase):
+	"""
+	Unit tests for EmailQueue.
+	Use this class for testing individual functions and methods.
+	"""
+
+	pass
+
+
+class TestEmailQueue(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def test_email_queue_deletion_based_on_modified_date(self):
 		from frappe.email.doctype.email_queue.email_queue import EmailQueue
 
@@ -27,8 +43,13 @@ class TestEmailQueue(FrappeTestCase):
 			}
 		).insert()
 
+<<<<<<< HEAD
 		old_record.modified = "2010-01-01 00:00:01"
 		old_record.recipients[0].modified = old_record.modified
+=======
+		old_record.creation = "2010-01-01 00:00:01"
+		old_record.recipients[0].creation = old_record.creation
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		old_record.db_update_all()
 
 		new_record = frappe.copy_doc(old_record)

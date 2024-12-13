@@ -13,7 +13,10 @@ login.bind_events = function () {
 		login.route();
 	});
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	$(".form-login").on("submit", function (event) {
 		event.preventDefault();
 		var args = {};
@@ -300,6 +303,7 @@ login.login_handlers = (function () {
 frappe.ready(function () {
 
 	login.bind_events();
+<<<<<<< HEAD
 
 	if (!window.location.hash) {
 		window.location.hash = "#login";
@@ -307,6 +311,8 @@ frappe.ready(function () {
 		$(window).trigger("hashchange");
 	}
 
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	if (window.show_footer_on_login) {
 		$("body .web-footer").show();
 	}
@@ -394,4 +400,8 @@ var continue_email = function (setup, prompt) {
 	}
 }
 
+<<<<<<< HEAD
 login.route();
+=======
+login.route();
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

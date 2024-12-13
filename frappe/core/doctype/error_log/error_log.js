@@ -12,6 +12,12 @@ frappe.ui.form.on("Error Log", {
 					reference_name: frm.doc.reference_name,
 				});
 			});
+<<<<<<< HEAD
+=======
+			frm.add_custom_button(__("Open reference document"), function () {
+				frappe.set_route("Form", frm.doc.reference_doctype, frm.doc.reference_name);
+			});
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		}
 	},
 });

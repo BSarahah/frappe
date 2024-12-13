@@ -4,10 +4,26 @@ import time
 
 import frappe
 from frappe.auth import CookieManager, LoginManager
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestActivityLog(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase, UnitTestCase
+
+
+class UnitTestActivityLog(UnitTestCase):
+	"""
+	Unit tests for ActivityLog.
+	Use this class for testing individual functions and methods.
+	"""
+
+	pass
+
+
+class TestActivityLog(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self) -> None:
 		frappe.set_user("Administrator")
 

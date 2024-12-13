@@ -7,7 +7,10 @@ import os
 import traceback
 import uuid
 
+<<<<<<< HEAD
 import pytz
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 import rq
 
 import frappe
@@ -52,7 +55,11 @@ class Monitor:
 			self.data = frappe._dict(
 				{
 					"site": frappe.local.site,
+<<<<<<< HEAD
 					"timestamp": datetime.datetime.now(pytz.UTC),
+=======
+					"timestamp": datetime.datetime.now(datetime.timezone.utc),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 					"transaction_type": transaction_type,
 					"uuid": str(uuid.uuid4()),
 				}
@@ -85,7 +92,11 @@ class Monitor:
 
 		if job := rq.get_current_job():
 			self.data.uuid = job.id
+<<<<<<< HEAD
 			waitdiff = self.data.timestamp - job.enqueued_at.replace(tzinfo=pytz.UTC)
+=======
+			waitdiff = self.data.timestamp - job.enqueued_at.replace(tzinfo=datetime.timezone.utc)
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			self.data.job.wait = int(waitdiff.total_seconds() * 1000000)
 
 	def add_custom_data(self, **kwargs):
@@ -94,7 +105,11 @@ class Monitor:
 
 	def dump(self, response=None):
 		try:
+<<<<<<< HEAD
 			timediff = datetime.datetime.now(pytz.UTC) - self.data.timestamp
+=======
+			timediff = datetime.datetime.now(datetime.timezone.utc) - self.data.timestamp
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			# Obtain duration in microseconds
 			self.data.duration = int(timediff.total_seconds() * 1000000)
 

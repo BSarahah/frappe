@@ -17,6 +17,9 @@ class RedirectPage:
 			self.http_status_code,
 			{
 				"Location": frappe.flags.redirect_location or (frappe.local.response or {}).get("location"),
+<<<<<<< HEAD
 				"Cache-Control": "no-store, no-cache, must-revalidate",
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			},
 		)

@@ -191,6 +191,11 @@ frappe.views.FileView = class FileView extends frappe.views.ListView {
 	prepare_datum(d) {
 		let icon_class = "";
 		let type = "";
+<<<<<<< HEAD
+=======
+		let title;
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		if (d.is_folder) {
 			icon_class = "folder-normal";
 			type = "folder";
@@ -202,7 +207,16 @@ frappe.views.FileView = class FileView extends frappe.views.ListView {
 			type = "file";
 		}
 
+<<<<<<< HEAD
 		let title = d.file_name || d.file_url;
+=======
+		if (type === "folder") {
+			title = this.get_folder_title(d.file_name);
+		} else {
+			title = d.file_name || d.file_url;
+		}
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		title = title.slice(0, 60);
 		d._title = title;
 		d.icon_class = icon_class;
@@ -216,6 +230,19 @@ frappe.views.FileView = class FileView extends frappe.views.ListView {
 		return d;
 	}
 
+<<<<<<< HEAD
+=======
+	get_folder_title(folder_name) {
+		// "Home" and "Attachments" are default folders that are always created in english.
+		// So we can and should translate them to the user's language.
+		if (["Home", "Attachments"].includes(folder_name)) {
+			return __(folder_name);
+		} else {
+			return folder_name;
+		}
+	}
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	before_render() {
 		super.before_render();
 		frappe.model.user_settings.save("File", "grid_view", frappe.views.FileView.grid_view);
@@ -290,8 +317,15 @@ frappe.views.FileView = class FileView extends frappe.views.ListView {
 
 		return folders
 			.map((folder, i) => {
+<<<<<<< HEAD
 				if (i === folders.length - 1) {
 					return `<span>${folder}</span>`;
+=======
+				const title = this.get_folder_title(folder);
+
+				if (i === folders.length - 1) {
+					return `<span>${title}</span>`;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				}
 				const route = folders.reduce((acc, curr, j) => {
 					if (j <= i) {
@@ -300,7 +334,11 @@ frappe.views.FileView = class FileView extends frappe.views.ListView {
 					return acc;
 				}, "/app/file/view");
 
+<<<<<<< HEAD
 				return `<a href="${route}">${folder}</a>`;
+=======
+				return `<a href="${route}">${title}</a>`;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			})
 			.join("&nbsp;/&nbsp;");
 	}

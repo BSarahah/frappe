@@ -31,6 +31,13 @@ function get_file_input() {
 	input.setAttribute("accept", "image/*");
 	input.setAttribute("multiple", "");
 
+<<<<<<< HEAD
+=======
+	// Make sure that the input exists in the DOM
+	input.classList.add("visually-hidden");
+	document.body.appendChild(input);
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	return input;
 }
 
@@ -126,6 +133,13 @@ frappe.ui.Capture = class {
 				me.images.push(f);
 			}
 
+<<<<<<< HEAD
+=======
+			// Remove the input from the DOM
+			me.input.remove();
+			me.input = null;
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			me.render_preview();
 			me.dialog.show();
 		};

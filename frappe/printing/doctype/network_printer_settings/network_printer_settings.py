@@ -18,8 +18,13 @@ class NetworkPrinterSettings(Document):
 		port: DF.Int
 		printer_name: DF.Literal[None]
 		server_ip: DF.Data
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	@frappe.whitelist()
 	def get_printers_list(self, ip="127.0.0.1", port=631):
 		printer_list = []

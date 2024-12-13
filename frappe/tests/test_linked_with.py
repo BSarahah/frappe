@@ -5,10 +5,17 @@ import frappe
 from frappe.core.doctype.doctype.test_doctype import new_doctype
 from frappe.database import savepoint
 from frappe.desk.form import linked_with
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestLinkedWith(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestLinkedWith(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		parent_doctype = new_doctype("Parent DocType")
 		parent_doctype.is_submittable = 1

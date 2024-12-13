@@ -67,8 +67,13 @@ class SocialLoginKey(Document):
 			"Keycloak",
 		]
 		user_id_property: DF.Data | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def autoname(self):
 		self.name = frappe.scrub(self.provider_name)
 

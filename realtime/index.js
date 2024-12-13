@@ -1,6 +1,11 @@
 const { Server } = require("socket.io");
 const http = require("node:http");
 
+<<<<<<< HEAD
+=======
+const fs = require("fs");
+const path = require("path");
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 const { get_conf, get_redis_subscriber } = require("../node_utils");
 const conf = get_conf();
 
@@ -25,10 +30,23 @@ const authenticate = require("./middlewares/authenticate");
 realtime.use(authenticate);
 // =======================
 
+<<<<<<< HEAD
 // load and register handlers
 const frappe_handlers = require("./handlers/frappe_handlers");
 function on_connection(socket) {
 	frappe_handlers(realtime, socket);
+=======
+function on_connection(socket) {
+	socket.installed_apps.forEach((app) => {
+		let app_handler = get_app_handlers(app);
+		try {
+			app_handler && app_handler(socket);
+		} catch (err) {
+			console.warn(`failed to setup event handlers from ${app}`);
+			console.warn(err);
+		}
+	});
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	// ESBUild "open in editor" on error
 	socket.on("open_in_editor", async (data) => {
@@ -37,6 +55,30 @@ function on_connection(socket) {
 	});
 }
 
+<<<<<<< HEAD
+=======
+const _app_handlers = {};
+function get_app_handlers(app) {
+	if (app in _app_handlers) {
+		return _app_handlers[app];
+	}
+
+	let file = `../../${app}/realtime/handlers.js`;
+	let abs_path = path.resolve(__dirname, file);
+	let handler = null;
+	if (fs.existsSync(abs_path)) {
+		try {
+			handler = require(file);
+		} catch (err) {
+			console.warn(`failed to load event handlers from ${abs_path}`);
+			console.warn(err);
+		}
+	}
+	_app_handlers[app] = handler;
+	return handler;
+}
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 realtime.on("connection", on_connection);
 // =======================
 

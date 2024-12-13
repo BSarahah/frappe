@@ -18,8 +18,13 @@ class ClientScript(Document):
 		module: DF.Link | None
 		script: DF.Code | None
 		view: DF.Literal["List", "Form"]
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def on_update(self):
 		frappe.clear_cache(doctype=self.dt)
 

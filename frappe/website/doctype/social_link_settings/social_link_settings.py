@@ -21,4 +21,8 @@ class SocialLinkSettings(Document):
 		parenttype: DF.Data
 		social_link_type: DF.Literal["", "facebook", "linkedin", "twitter", "email"]
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

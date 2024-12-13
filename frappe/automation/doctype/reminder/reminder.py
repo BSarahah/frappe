@@ -23,8 +23,13 @@ class Reminder(Document):
 		reminder_docname: DF.DynamicLink | None
 		reminder_doctype: DF.Link | None
 		user: DF.Link
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	@staticmethod
 	def clear_old_logs(days=30):
 		from frappe.query_builder import Interval

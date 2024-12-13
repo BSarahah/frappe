@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 """ Basic telemetry for improving apps.
+=======
+"""Basic telemetry for improving apps.
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 WARNING: Everything in this file should be treated "internal" and is subjected to change or get
 removed without any warning.
 """
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from contextlib import suppress
 
 import frappe

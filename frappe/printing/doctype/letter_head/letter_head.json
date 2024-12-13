@@ -223,7 +223,11 @@
    "role": "Desk User"
   }
  ],
+<<<<<<< HEAD
  "sort_field": "modified",
+=======
+ "sort_field": "creation",
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
  "sort_order": "DESC",
  "states": [],
  "track_changes": 1

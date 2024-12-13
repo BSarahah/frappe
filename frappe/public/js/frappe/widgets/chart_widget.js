@@ -47,16 +47,28 @@ export default class ChartWidget extends Widget {
 		}
 
 		this.loading = $(
+<<<<<<< HEAD
 			`<div class="chart-loading-state text-muted" style="height: ${this.height}px;">${__(
 				"Loading..."
 			)}</div>`
+=======
+			`<div class="chart-loading-state text-extra-muted" style="height: ${
+				this.height
+			}px;">${__("Loading...")}</div>`
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		);
 		this.loading.appendTo(this.body);
 
 		this.empty = $(
+<<<<<<< HEAD
 			`<div class="chart-loading-state text-muted" style="height: ${this.height}px;">${__(
 				"No Data"
 			)}</div>`
+=======
+			`<div class="chart-loading-state text-extra-muted" style="height: ${
+				this.height
+			}px;">${__("No Data")}</div>`
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		);
 		this.empty.hide().appendTo(this.body);
 
@@ -125,7 +137,11 @@ export default class ChartWidget extends Widget {
 		if (this.chart_doc.type == "Heatmap") {
 			filters = [
 				{
+<<<<<<< HEAD
 					label: this.chart_settings.heatmap_year || this.chart_doc.heatmap_year,
+=======
+					label: __(this.chart_settings.heatmap_year) || __(this.chart_doc.heatmap_year),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 					options: frappe.dashboard_utils.get_years_since_creation(
 						frappe.boot.user.creation
 					),
@@ -141,7 +157,12 @@ export default class ChartWidget extends Widget {
 		} else {
 			filters = [
 				{
+<<<<<<< HEAD
 					label: this.chart_settings.time_interval || this.chart_doc.time_interval,
+=======
+					label:
+						__(this.chart_settings.time_interval) || __(this.chart_doc.time_interval),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 					options: ["Yearly", "Quarterly", "Monthly", "Weekly", "Daily"],
 					icon: "calendar",
 					class: "time-interval-filter",
@@ -233,7 +254,11 @@ export default class ChartWidget extends Widget {
 				df: {
 					fieldtype: "DateRange",
 					fieldname: "from_date",
+<<<<<<< HEAD
 					placeholder: "Date Range",
+=======
+					placeholder: __("Date Range"),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 					input_class: "input-xs",
 					default: [this.chart_settings.from_date, this.chart_settings.to_date],
 					value: [this.chart_settings.from_date, this.chart_settings.to_date],
@@ -314,7 +339,11 @@ export default class ChartWidget extends Widget {
 
 		if (this.chart_doc.document_type) {
 			actions.push({
+<<<<<<< HEAD
 				label: __("{0} List", [this.chart_doc.document_type]),
+=======
+				label: __("{0} List", [__(this.chart_doc.document_type)]),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				action: "action-list",
 				handler: () => {
 					frappe.set_route("List", this.chart_doc.document_type);
@@ -322,7 +351,11 @@ export default class ChartWidget extends Widget {
 			});
 		} else if (this.chart_doc.chart_type === "Report") {
 			actions.push({
+<<<<<<< HEAD
 				label: __("{0} Report", [this.chart_doc.report_name]),
+=======
+				label: __("{0} Report", [__(this.chart_doc.report_name)]),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				action: "action-list",
 				handler: () => {
 					frappe.set_route("query-report", this.chart_doc.report_name, this.filters);
@@ -392,7 +425,11 @@ export default class ChartWidget extends Widget {
 	setup_filter_dialog(fields) {
 		let me = this;
 		let dialog = new frappe.ui.Dialog({
+<<<<<<< HEAD
 			title: __("Set Filters for {0}", [this.chart_doc.chart_name]),
+=======
+			title: __("Set Filters for {0}", [__(this.chart_doc.chart_name)]),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			fields: fields,
 			primary_action: function () {
 				let values = this.get_values();
@@ -403,7 +440,11 @@ export default class ChartWidget extends Widget {
 					me.fetch_and_update_chart();
 				}
 			},
+<<<<<<< HEAD
 			primary_action_label: "Set",
+=======
+			primary_action_label: __("Set"),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		});
 
 		dialog.show();
@@ -473,7 +514,13 @@ export default class ChartWidget extends Widget {
 				${actions
 					.map(
 						(action) =>
+<<<<<<< HEAD
 							`<li><a class="dropdown-item" data-action="${action.action}">${action.label}</a></li>`
+=======
+							`<li><a class="dropdown-item" data-action="${action.action}">${__(
+								action.label
+							)}</a></li>`
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 					)
 					.join("")}
 			</ul>

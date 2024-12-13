@@ -37,8 +37,13 @@ class EnergyPointLog(Document):
 		seen: DF.Check
 		type: DF.Literal["Auto", "Appreciation", "Criticism", "Review", "Revert"]
 		user: DF.Link
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		self.map_milestone_reference()
 		if self.type in ["Appreciation", "Criticism"] and self.user == self.owner:

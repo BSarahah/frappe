@@ -17,8 +17,13 @@ class WebsiteSidebar(Document):
 
 		sidebar_items: DF.Table[WebsiteSidebarItem]
 		title: DF.Data
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def get_items(self):
 		items = frappe.get_all(
 			"Website Sidebar Item",

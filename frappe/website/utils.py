@@ -10,7 +10,10 @@ import yaml
 from werkzeug.wrappers import Response
 
 import frappe
+<<<<<<< HEAD
 from frappe import _
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.apps import get_apps, get_default_path, is_desk_apps
 from frappe.model.document import Document
 from frappe.utils import (
@@ -31,6 +34,7 @@ CLEANUP_PATTERN_3 = re.compile(r"(-)\1+")
 
 
 def delete_page_cache(path):
+<<<<<<< HEAD
 	frappe.cache.delete_value("full_index")
 	groups = ("website_page", "page_context")
 	if path:
@@ -39,6 +43,15 @@ def delete_page_cache(path):
 	else:
 		for name in groups:
 			frappe.cache.delete_key(name)
+=======
+	groups = ["website_page", "page_context"]
+	if path:
+		frappe.cache.hdel_names(groups, path)
+		frappe.cache.delete_value("full_index")
+	else:
+		groups.append("full_index")
+		frappe.cache.delete_value(groups)
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 
 def find_first_image(html):
@@ -166,6 +179,7 @@ def get_home_page_via_hooks():
 
 
 def get_boot_data():
+<<<<<<< HEAD
 	apps = get_apps() or []
 	return {
 		"lang": frappe.local.lang or "en",
@@ -180,6 +194,23 @@ def get_boot_data():
 			"time_format": frappe.get_system_settings("time_format") or "HH:mm:ss",
 			"first_day_of_the_week": frappe.get_system_settings("first_day_of_the_week") or "Sunday",
 			"number_format": frappe.get_system_settings("number_format") or "#,###.##",
+=======
+	from frappe.locale import get_date_format, get_first_day_of_the_week, get_number_format, get_time_format
+
+	return {
+		"lang": frappe.local.lang or "en",
+		"apps_data": {
+			"apps": get_apps() or [],
+			"is_desk_apps": 1 if bool(is_desk_apps(get_apps())) else 0,
+			"default_path": get_default_path() or "",
+		},
+		"sysdefaults": {
+			"float_precision": cint(frappe.get_system_settings("float_precision")) or 3,
+			"date_format": get_date_format(),
+			"time_format": get_time_format(),
+			"first_day_of_the_week": get_first_day_of_the_week(),
+			"number_format": get_number_format().string,
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			"currency": frappe.get_system_settings("currency"),
 		},
 		"time_zone": {
@@ -259,7 +290,11 @@ def get_next_link(route, url_prefix=None, app=None):
 
 
 def get_full_index(route=None, app=None):
+<<<<<<< HEAD
 	"""Returns full index of the website for www upto the n-th level"""
+=======
+	"""Return full index of the website for www upto the n-th level."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	from frappe.website.router import get_pages
 
 	if not frappe.local.flags.children_map:
@@ -313,7 +348,11 @@ def get_full_index(route=None, app=None):
 
 
 def extract_title(source, path):
+<<<<<<< HEAD
 	"""Returns title from `&lt;!-- title --&gt;` or &lt;h1&gt; or path"""
+=======
+	"""Return title from `&lt;!-- title --&gt;` or &lt;h1&gt; or path."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	title = extract_comment_tag(source, "title")
 
 	if not title and "<h1>" in source:
@@ -371,25 +410,41 @@ def clear_cache(path=None):
 	:param path: (optional) for the given path"""
 	from frappe.website.router import clear_routing_cache
 
+<<<<<<< HEAD
 	for key in (
+=======
+	clear_routing_cache()
+
+	keys = [
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		"website_generator_routes",
 		"website_pages",
 		"website_full_index",
 		"languages_with_name",
 		"languages",
+<<<<<<< HEAD
 	):
 		frappe.cache.delete_value(key)
 
 	clear_routing_cache()
 
 	frappe.cache.delete_value("website_404")
+=======
+		"website_404",
+	]
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	if path:
 		frappe.cache.hdel("website_redirects", path)
 		delete_page_cache(path)
 	else:
 		clear_sitemap()
 		frappe.clear_cache("Guest")
+<<<<<<< HEAD
 		for key in (
+=======
+		keys += [
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			"portal_menu_items",
 			"home_page",
 			"website_route_rules",
@@ -397,8 +452,14 @@ def clear_cache(path=None):
 			"website_redirects",
 			"page_context",
 			"website_page",
+<<<<<<< HEAD
 		):
 			frappe.cache.delete_value(key)
+=======
+		]
+
+	frappe.cache.delete_value(keys)
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	for method in frappe.get_hooks("website_clear_cache"):
 		frappe.get_attr(method)(path)
@@ -527,6 +588,10 @@ def cache_html(func):
 				html = page_cache[frappe.local.lang]
 			if html:
 				frappe.local.response.from_cache = True
+<<<<<<< HEAD
+=======
+				frappe.local.response.can_cache = True
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				return html
 		html = func(*args, **kwargs)
 		context = args[0].context
@@ -534,6 +599,10 @@ def cache_html(func):
 			page_cache = frappe.cache.hget("website_page", args[0].path) or {}
 			page_cache[frappe.local.lang] = html
 			frappe.cache.hset("website_page", args[0].path, page_cache)
+<<<<<<< HEAD
+=======
+			frappe.local.response.can_cache = True
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 		return html
 
@@ -545,14 +614,22 @@ def build_response(path, data, http_status_code, headers: dict | None = None):
 	response = Response()
 	response.data = set_content_type(response, data, path)
 	response.status_code = http_status_code
+<<<<<<< HEAD
 	response.headers["X-Page-Name"] = cstr(path.encode("ascii", errors="xmlcharrefreplace"))
+=======
+	response.headers["X-Page-Name"] = cstr(cstr(path).encode("ascii", errors="xmlcharrefreplace"))
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	response.headers["X-From-Cache"] = frappe.local.response.from_cache or False
 
 	add_preload_for_bundled_assets(response)
 
 	if headers:
 		for key, val in headers.items():
+<<<<<<< HEAD
 			response.headers[key] = cstr(val.encode("ascii", errors="xmlcharrefreplace"))
+=======
+			response.headers[key] = cstr(cstr(val).encode("ascii", errors="xmlcharrefreplace"))
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	return response
 
@@ -582,9 +659,14 @@ def add_preload_for_bundled_assets(response):
 	links.extend(f"<{js}>; rel=preload; as=script" for js in frappe.local.preload_assets["script"])
 
 	version = get_build_version()
+<<<<<<< HEAD
 	# include_icons = frappe.get_hooks().get("app_include_icons", [])
 	links.extend(
 		f"</assets/{svg}?v={version}>; rel=preload; as=fetch; crossorigin"
+=======
+	links.extend(
+		f"<{svg}?v={version}>; rel=preload; as=fetch; crossorigin"
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		for svg in frappe.local.preload_assets["icons"]
 	)
 

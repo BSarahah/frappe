@@ -19,7 +19,11 @@
 	background: var(--fg-color);
 	padding: 45px 80px;
 	border-radius: var(--border-radius-md);
+<<<<<<< HEAD
 	border: 1px solid var(--border-color);
+=======
+	box-shadow: var(--shadow-lg);
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 }
 
 .apps {

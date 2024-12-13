@@ -78,7 +78,11 @@ def update_reports(doctype, old_fieldname, new_fieldname):
 		"""select name, ref_doctype, json from tabReport
 		where report_type = 'Report Builder' and ifnull(is_standard, 'No') = 'No'
 		and json like %s and json like %s""",
+<<<<<<< HEAD
 		("%%%s%%" % old_fieldname, "%%%s%%" % doctype),
+=======
+		("%{}%".format(old_fieldname), "%{}%".format(doctype)),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		as_dict=True,
 	)
 

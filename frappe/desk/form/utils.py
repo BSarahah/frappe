@@ -69,7 +69,11 @@ def update_comment(name, content):
 
 
 @frappe.whitelist()
+<<<<<<< HEAD
 def get_next(doctype, value, prev, filters=None, sort_order="desc", sort_field="modified"):
+=======
+def get_next(doctype, value, prev, filters=None, sort_order="desc", sort_field="creation"):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	prev = int(prev)
 	if not filters:
 		filters = []

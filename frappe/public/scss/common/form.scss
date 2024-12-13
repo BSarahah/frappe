@@ -17,7 +17,11 @@
 	}
 	min-height: var(--input-height);
 	border-radius: var(--border-radius-sm);
+<<<<<<< HEAD
 	padding: var(--disabled-input-padding);
+=======
+	padding: 4px 8px;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	cursor: default;
 	color: var(--disabled-text-color);
 	background-color: var(--disabled-control-bg);

@@ -27,8 +27,13 @@ class DocumentNamingRule(Document):
 		prefix: DF.Data
 		prefix_digits: DF.Int
 		priority: DF.Int
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def validate(self):
 		self.validate_fields_in_conditions()
 

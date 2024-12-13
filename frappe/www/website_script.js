@@ -23,7 +23,11 @@ ga('send', 'pageview');
 			let query_params = frappe.utils.get_query_params();
 
 			// Get visitor ID based on browser uniqueness
+<<<<<<< HEAD
 			import('https://openfpcdn.io/fingerprintjs/v3')
+=======
+			import('/assets/frappe/js/lib/fingerprintjs.js')
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 				.then(fingerprint_js => fingerprint_js.load())
 				.then(fp => fp.get())
 				.then(result => {
@@ -32,12 +36,23 @@ ga('send', 'pageview');
 						browser: browser.name,
 						version: browser.version,
 						user_tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+<<<<<<< HEAD
 						source: query_params.source,
 						medium: query_params.medium,
 						campaign: query_params.campaign,
+=======
+						source: query_params.source || query_params.utm_source,
+						medium: query_params.medium || query_params.utm_medium,
+						campaign: query_params.campaign || query_params.utm_campaign,
+						content: query_params.content || query_params.utm_content,
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 						visitor_id: result.visitorId
 					})
 			})
 		})
 	}
+<<<<<<< HEAD
 {% endif %}
+=======
+{% endif %}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

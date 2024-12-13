@@ -1,4 +1,15 @@
 # Any python files modifed but no test files modified
 add-test-cases:
+<<<<<<< HEAD
 - any: ['frappe/**/*.py']
   all: ['!frappe/**/test*.py']
+=======
+- all:
+  - changed-files:
+    - any-glob-to-any-file: 'frappe/**/*.py'
+    - all-globs-to-all-files: '!frappe/**/test*.py'
+
+# Add 'release' label to any PR that is opened against the `main` branch
+release:
+ - base-branch: ['^version-\d+$']
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)

@@ -23,7 +23,11 @@ UNSUPPORTED_STATIC_PAGE_TYPES = (
 
 
 class StaticPage(BaseRenderer):
+<<<<<<< HEAD
 	__slots__ = ("path", "file_path")
+=======
+	__slots__ = ("file_path", "path")
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	def __init__(self, path, http_status_code=None):
 		super().__init__(path=path, http_status_code=http_status_code)

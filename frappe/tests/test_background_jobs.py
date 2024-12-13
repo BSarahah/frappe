@@ -6,7 +6,11 @@ from rq import Queue
 
 import frappe
 from frappe.core.doctype.rq_job.rq_job import remove_failed_jobs
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
+=======
+from frappe.tests import IntegrationTestCase
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.utils.background_jobs import (
 	RQ_JOB_FAILURE_TTL,
 	RQ_RESULTS_TTL,
@@ -17,7 +21,11 @@ from frappe.utils.background_jobs import (
 )
 
 
+<<<<<<< HEAD
 class TestBackgroundJobs(FrappeTestCase):
+=======
+class TestBackgroundJobs(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def test_remove_failed_jobs(self):
 		frappe.enqueue(method="frappe.tests.test_background_jobs.fail_function", queue="short")
 		# wait for enqueued job to execute
@@ -55,8 +63,15 @@ class TestBackgroundJobs(FrappeTestCase):
 
 	def test_job_hooks(self):
 		self.addCleanup(lambda: _test_JOB_HOOK.clear())
+<<<<<<< HEAD
 		with freeze_local() as locals, frappe.init_site(locals.site), patch(
 			"frappe.get_hooks", patch_job_hooks
+=======
+		with (
+			freeze_local() as locals,
+			frappe.init_site(locals.site),
+			patch("frappe.get_hooks", patch_job_hooks),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		):
 			frappe.connect()
 			self.assertIsNone(_test_JOB_HOOK.get("before_job"))

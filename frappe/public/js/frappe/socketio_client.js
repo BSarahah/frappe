@@ -214,5 +214,9 @@ class RealTimeClient {
 
 frappe.realtime = new RealTimeClient();
 
+<<<<<<< HEAD
 // backward compatbility
+=======
+// backward compatibility
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 frappe.socketio = frappe.realtime;

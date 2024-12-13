@@ -397,7 +397,11 @@ frappe.ui.form.on("Dashboard Chart", {
 						}
 					}
 				},
+<<<<<<< HEAD
 				primary_action_label: "Set",
+=======
+				primary_action_label: __("Set"),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			});
 			frappe.dashboards.filters_dialog = dialog;
 
@@ -484,7 +488,11 @@ frappe.ui.form.on("Dashboard Chart", {
 					}
 					frm.trigger("set_dynamic_filters_in_table");
 				},
+<<<<<<< HEAD
 				primary_action_label: "Set",
+=======
+				primary_action_label: __("Set"),
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			});
 
 			dialog.show();

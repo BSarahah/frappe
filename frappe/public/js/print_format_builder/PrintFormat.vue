@@ -127,6 +127,9 @@ watch(print_format, () => (store.dirty.value = true), { deep: true });
 	margin-left: auto;
 	background-color: white;
 	box-shadow: var(--shadow-lg);
+<<<<<<< HEAD
 	border-radius: var(--border-radius);
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 }
 </style>

@@ -9,7 +9,11 @@ import frappe
 import frappe.translate
 from frappe import _, _lt
 from frappe.gettext.extractors.javascript import extract_javascript
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
+=======
+from frappe.tests import IntegrationTestCase
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.translate import (
 	MERGED_TRANSLATION_KEY,
 	USER_TRANSLATION_KEY,
@@ -35,7 +39,11 @@ first_lang, second_lang, third_lang, fourth_lang, fifth_lang = choices(
 _lazy_translations = _lt("Communication")
 
 
+<<<<<<< HEAD
 class TestTranslate(FrappeTestCase):
+=======
+class TestTranslate(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	guest_sessions_required = (
 		"test_guest_request_language_resolution_with_cookie",
 		"test_guest_request_language_resolution_with_request_header",
@@ -94,10 +102,32 @@ class TestTranslate(FrappeTestCase):
 			self.assertEqual(_("Mobile No"), "Mobile No")
 
 	def test_translation_with_context(self):
+<<<<<<< HEAD
+=======
+		t1 = frappe.new_doc("Translation")
+		t1.language = "fr"
+		t1.source_text = "Change"
+		t1.translated_text = "Changement"
+		t1.save()
+
+		t2 = frappe.new_doc("Translation")
+		t2.language = "fr"
+		t2.source_text = "Change"
+		t2.translated_text = "la monnaie"
+		t2.context = "Coins"
+		t2.save()
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		frappe.local.lang = "fr"
 		self.assertEqual(_("Change"), "Changement")
 		self.assertEqual(_("Change", context="Coins"), "la monnaie")
 
+<<<<<<< HEAD
+=======
+		t1.delete()
+		t2.delete()
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def test_lazy_translations(self):
 		frappe.local.lang = "de"
 		eager_translation = _("Communication")
@@ -156,7 +186,11 @@ class TestTranslate(FrappeTestCase):
 		site = frappe.local.site
 		frappe.destroy()
 		_("this shouldn't break")
+<<<<<<< HEAD
 		frappe.init(site=site)
+=======
+		frappe.init(site)
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		frappe.connect()
 
 	def test_guest_request_language_resolution_with_request_header(self):

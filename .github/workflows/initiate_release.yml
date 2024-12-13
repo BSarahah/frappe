@@ -15,7 +15,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+<<<<<<< HEAD
         version: ["13", "14"]
+=======
+        version: ["14", "15"]
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
     steps:
       - uses: octokit/request-action@v2.x

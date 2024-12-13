@@ -1,4 +1,8 @@
 {% extends "templates/web.html" %}
+<<<<<<< HEAD
+=======
+{% block navbar %}{% endblock %}
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 {% macro email_login_body() -%}
 {% if not disable_user_pass_login or (ldap_settings and ldap_settings.enabled) %}

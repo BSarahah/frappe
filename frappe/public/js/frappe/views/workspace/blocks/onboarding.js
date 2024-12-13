@@ -113,7 +113,11 @@ export default class Onboarding extends Block {
 
 		if (this.data && this.data.onboarding_name) {
 			let has_data = this.make("onboarding", this.data.onboarding_name);
+<<<<<<< HEAD
 			if (!has_data) return;
+=======
+			if (!has_data) return this.wrapper;
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		}
 
 		if (!this.readOnly) {
@@ -121,7 +125,10 @@ export default class Onboarding extends Block {
 			this.add_settings_button();
 			this.add_new_block_button();
 		}
+<<<<<<< HEAD
 		$(this.wrapper).css("padding-bottom", "20px");
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		return this.wrapper;
 	}
 

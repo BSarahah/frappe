@@ -10,10 +10,17 @@ from frappe.gettext.translate import (
 	write_binary,
 	write_catalog,
 )
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 
 class TestTranslate(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase
+
+
+class TestTranslate(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		pass
 

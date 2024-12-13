@@ -88,11 +88,15 @@ class ConstantColumn(Term):
 	alias = None
 
 	def __init__(self, value: str) -> None:
+<<<<<<< HEAD
 		"""[ Returns a pseudo column with a constant value in all the rows]
 
 		Args:
 		        value (str): [ Value of the column ]
 		"""
+=======
+		"""Return a pseudo column with the given constant `value` in all the rows."""
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		self.value = value
 
 	def get_sql(self, quote_char: str | None = None, **kwargs: Any) -> str:

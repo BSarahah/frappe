@@ -20,19 +20,34 @@ context("Workspace Blocks", () => {
 		cy.get(".codex-editor__redactor .ce-block");
 		cy.get(".btn-new-workspace").click();
 		cy.fill_field("title", "Test Block Page", "Data");
+<<<<<<< HEAD
+=======
+		cy.fill_field("type", "Workspace", "Select");
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		cy.get_open_dialog().find(".modal-header").click();
 		cy.get_open_dialog().find(".btn-primary").click();
 
 		// check if sidebar item is added in private section
+<<<<<<< HEAD
 		cy.get('.sidebar-item-container[item-name="Test Block Page"]').should(
+=======
+		cy.get('.sidebar-item-container[item-title="Test Block Page"]').should(
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			"have.attr",
 			"item-public",
 			"0"
 		);
+<<<<<<< HEAD
 
 		cy.get('.standard-actions .btn-primary[data-label="Save"]').click();
 		cy.wait(300);
 		cy.get('.sidebar-item-container[item-name="Test Block Page"]').should(
+=======
+		cy.wait(300);
+		cy.get('.standard-actions .btn-primary[data-label="Save"]').click();
+		cy.wait(300);
+		cy.get('.sidebar-item-container[item-title="Test Block Page"]').should(
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 			"have.attr",
 			"item-public",
 			"0"

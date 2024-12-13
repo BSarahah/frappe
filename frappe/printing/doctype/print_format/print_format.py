@@ -47,7 +47,10 @@ class PrintFormat(Document):
 		raw_printing: DF.Check
 		show_section_headings: DF.Check
 		standard: DF.Literal["No", "Yes"]
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	# end: auto-generated types
 
 	def onload(self):

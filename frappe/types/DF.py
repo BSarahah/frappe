@@ -10,7 +10,11 @@ Autocomplete = Data
 Attach = Data
 AttachImage = Data
 Barcode = Data
+<<<<<<< HEAD
 Check = int
+=======
+Check = bool | int
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 Code = Text
 Color = str
 Currency = float

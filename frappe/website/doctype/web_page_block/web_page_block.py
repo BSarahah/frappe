@@ -31,4 +31,8 @@ class WebPageBlock(Document):
 		web_template: DF.Link | None
 		web_template_values: DF.Code | None
 	# end: auto-generated types
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	pass

@@ -59,7 +59,11 @@ export default {
 		},
 	],
 	quick_entry: 1,
+<<<<<<< HEAD
 	sort_field: "modified",
+=======
+	sort_field: "creation",
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	sort_order: "ASC",
 	track_changes: 1,
 };

@@ -4,7 +4,11 @@
 import json
 
 import frappe
+<<<<<<< HEAD
 from frappe.integrations.utils import json_handler
+=======
+from frappe.integrations.utils import get_json, json_handler
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 from frappe.model.document import Document
 
 
@@ -29,8 +33,13 @@ class IntegrationRequest(Document):
 		request_id: DF.Data | None
 		status: DF.Literal["", "Queued", "Authorized", "Completed", "Cancelled", "Failed"]
 		url: DF.SmallText | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def autoname(self):
 		if self.flags._name:
 			self.name = self.flags._name
@@ -40,13 +49,21 @@ class IntegrationRequest(Document):
 		from frappe.query_builder.functions import Now
 
 		table = frappe.qb.DocType("Integration Request")
+<<<<<<< HEAD
 		frappe.db.delete(table, filters=(table.modified < (Now() - Interval(days=days))))
+=======
+		frappe.db.delete(table, filters=(table.creation < (Now() - Interval(days=days))))
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	def update_status(self, params, status):
 		data = json.loads(self.data)
 		data.update(params)
 
+<<<<<<< HEAD
 		self.data = json.dumps(data)
+=======
+		self.data = get_json(data)
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 		self.status = status
 		self.save(ignore_permissions=True)
 		frappe.db.commit()

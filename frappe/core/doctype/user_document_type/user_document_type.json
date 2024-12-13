@@ -135,7 +135,13 @@
  "name": "User Document Type",
  "owner": "Administrator",
  "permissions": [],
+<<<<<<< HEAD
  "sort_field": "modified",
  "sort_order": "DESC",
+=======
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
  "track_changes": 1
 }

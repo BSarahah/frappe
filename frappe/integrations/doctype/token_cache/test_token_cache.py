@@ -1,12 +1,30 @@
 # Copyright (c) 2019, Frappe Technologies and contributors
 # License: MIT. See LICENSE
 import frappe
+<<<<<<< HEAD
 from frappe.tests.utils import FrappeTestCase
 
 test_dependencies = ["User", "Connected App", "Token Cache"]
 
 
 class TestTokenCache(FrappeTestCase):
+=======
+from frappe.tests import IntegrationTestCase, UnitTestCase
+
+EXTRA_TEST_RECORD_DEPENDENCIES = ["User", "Connected App", "Token Cache"]
+
+
+class UnitTestTokenCache(UnitTestCase):
+	"""
+	Unit tests for TokenCache.
+	Use this class for testing individual functions and methods.
+	"""
+
+	pass
+
+
+class TestTokenCache(IntegrationTestCase):
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def setUp(self):
 		self.token_cache = frappe.get_last_doc("Token Cache")
 		self.token_cache.update({"connected_app": frappe.get_last_doc("Connected App").name})

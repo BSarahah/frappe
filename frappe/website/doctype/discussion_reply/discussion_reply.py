@@ -17,8 +17,13 @@ class DiscussionReply(Document):
 
 		reply: DF.TextEditor | None
 		topic: DF.Link | None
+<<<<<<< HEAD
 
 	# end: auto-generated types
+=======
+	# end: auto-generated types
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 	def on_update(self):
 		frappe.publish_realtime(
 			event="update_message",

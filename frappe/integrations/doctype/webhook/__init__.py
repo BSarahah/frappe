@@ -3,6 +3,19 @@
 
 import frappe
 
+<<<<<<< HEAD
+=======
+supported_events = {
+	"after_insert",
+	"on_update",
+	"on_submit",
+	"on_cancel",
+	"on_trash",
+	"on_update_after_submit",
+	"on_change",
+}
+
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 def get_all_webhooks():
 	# query webhooks
@@ -22,6 +35,11 @@ def get_all_webhooks():
 
 def run_webhooks(doc, method):
 	"""Run webhooks for this method"""
+<<<<<<< HEAD
+=======
+	if method not in supported_events:
+		return
+>>>>>>> 4509e75179 (fix: convert frappe.boot to JSON properly)
 
 	frappe_flags = frappe.local.flags
 
