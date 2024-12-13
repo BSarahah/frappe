@@ -1,5 +1,5 @@
 <div align="center" markdown="1">
-	<img src=".github/framework-logo-new.svg" width="100"/>
+	<img src=".github/framework-logo-new.svg" width="80" height="80"/>
 	<h1>Frappe Framework</h1>
 
  **Low Code Web Framework For Real World Applications, In Python And JavaScript**
@@ -9,12 +9,22 @@
 	<a target="_blank" href="#LICENSE" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-success.svg"></a>
 	<a href="https://codecov.io/gh/frappe/frappe"><img src="https://codecov.io/gh/frappe/frappe/branch/develop/graph/badge.svg?token=XoTa679hIj"/></a>
 </div>
-
+<div align="center">
+	<img src=".github/hero-image.png" alt="Hero Image" width="72%" />
+</div>
 <div align="center">
     <a href="https://frappe.io/framework">Website</a>
     -
     <a href="https://docs.frappe.io/framework">Documentation</a>
 </div>
+
+<details>
+<summary>Screenshots</summary>
+
+![Query Builder](.github/query-builder.png)
+![Query Builder](.github/join-editor.png)
+![Chart Builder](.github/chart-builder.png)
+</details>
 
 ## Frappe Framework
 Full-stack web application framework that uses Python and MariaDB on the server side and a tightly integrated client side library. Built for ERPNext.
