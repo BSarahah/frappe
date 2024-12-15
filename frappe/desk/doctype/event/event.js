@@ -19,6 +19,8 @@ frappe.ui.form.on("Event", {
 			};
 		});
 	},
+
+/*
 	refresh: function (frm) {
 		if (frm.doc.event_participants) {
 			frm.doc.event_participants.forEach((value) => {
@@ -58,6 +60,7 @@ frappe.ui.form.on("Event", {
 			);
 		}
 	},
+*/
 	repeat_on: function (frm) {
 		if (frm.doc.repeat_on === "Every Day") {
 			["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"].map(

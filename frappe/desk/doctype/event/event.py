@@ -52,7 +52,7 @@ class Event(Document):
 		color: DF.Color | None
 		description: DF.TextEditor | None
 		ends_on: DF.Datetime | None
-		event_category: DF.Literal["Event", "Meeting", "Call", "Sent/Received Email", "Other"]
+		event_category: DF.Literal["Event", "Meeting", "Sent/Received Email", "Screening Call", "Support Session"]
 		event_participants: DF.Table[EventParticipants]
 		event_type: DF.Literal["Private", "Public"]
 		friday: DF.Check
@@ -76,7 +76,6 @@ class Event(Document):
 		thursday: DF.Check
 		tuesday: DF.Check
 		wednesday: DF.Check
-
 	# end: auto-generated types
 	def validate(self):
 		if not self.starts_on:
